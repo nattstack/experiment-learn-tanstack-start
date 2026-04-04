@@ -1,5 +1,8 @@
+/// <reference types="vite/client" />
+
 import { Outlet, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router"
 import type { PropsWithChildren } from "react"
+import appCss from "../styles/global.css?url"
 
 export const Route = createRootRoute({
   head: () => ({
@@ -13,6 +16,12 @@ export const Route = createRootRoute({
       },
       {
         title: "TanStack Start Starter",
+      },
+    ],
+    links: [
+      {
+        href: appCss,
+        rel: "stylesheet",
       },
     ],
   }),

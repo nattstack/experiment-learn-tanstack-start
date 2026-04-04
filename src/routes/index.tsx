@@ -1,4 +1,4 @@
-import { Button } from "@nattstack/ui"
+import { Button, Row } from "@nattstack/ui"
 // src/routes/index.tsx
 import { createFileRoute } from "@tanstack/react-router"
 
@@ -7,5 +7,11 @@ export const Route = createFileRoute("/")({
 })
 
 function Home() {
-  return <Button onClick={() => {}}>Hello</Button>
+  return (
+    <Row className="d p-64">
+      <Button variant="accent" onClick={() => {}}>
+        Hello
+      </Button>
+    </Row>
+  )
 }
