@@ -108,17 +108,17 @@ const activity = [
 
 function Home() {
   return (
-    <main className="bg-gray-2 min-h-screen px-24 pt-40 pb-80">
-      <Column className="mx-auto w-full max-w-[112rem] gap-24">
-        <Surface className="gap-24 p-28">
-          <Row className="flex-wrap items-stretch justify-between gap-24">
-            <Column className="min-w-0 flex-[1_1_46rem] gap-16">
+    <main className="bg-gray-2 min-h-screen px-24 pt-48 pb-80">
+      <Column className="mx-auto w-full max-w-[112rem] gap-32">
+        <Surface className="from-primary-3 gap-28 bg-linear-to-br to-transparent p-36">
+          <Row className="flex-wrap items-stretch justify-between gap-28">
+            <Column className="min-w-0 flex-[1_1_46rem] gap-20">
               <span className={eyebrowClassName}>Nattstack UI demo gallery</span>
               <Column className="gap-12">
                 <h1 className={titleClassName}>
                   A few clean example surfaces built with Nattstack UI.
                 </h1>
-                <p className={copyClassName}>
+                <p className="text-16 text-gray-11 m-0 max-w-[56rem] leading-[1.6]">
                   This page mixes hero content, settings controls, queue layouts, and tabbed
                   previews so you can quickly see how the components feel together in a real app.
                 </p>
@@ -142,7 +142,7 @@ function Home() {
               </Row>
             </Column>
 
-            <Column className="border-gray-4 bg-gray-2 min-w-[28rem] flex-[0_1_32rem] gap-16 rounded-[2.4rem] border p-20">
+            <Column className="border-primary-6 from-primary-2 to-gray-2 min-w-[28rem] flex-[0_1_32rem] gap-20 rounded-[2.4rem] border bg-linear-to-b p-24">
               <Row className="items-center justify-between">
                 <span className={pillClassName}>Launch kit</span>
                 <span className={metaClassName}>Updated 2m ago</span>
@@ -176,7 +176,7 @@ function Home() {
 
         <div className="grid grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] gap-16">
           {stats.map((stat) => (
-            <Surface key={stat.label} className="gap-10 p-20">
+            <Surface key={stat.label} className="gap-12 p-24">
               <span className={metaClassName}>{stat.label}</span>
               <strong className={statValueClassName}>{stat.value}</strong>
               <p className={copyClassName}>{stat.note}</p>
@@ -269,7 +269,16 @@ function Home() {
                     <strong className={itemTitleClassName}>{item.title}</strong>
                     <span className={copyClassName}>Owner: {item.owner}</span>
                   </Column>
-                  <span className={statusPillClassName}>{item.status}</span>
+                  <span
+                    className={cn(
+                      "whitespace-nowrap rounded-full px-10 py-6 text-12 font-bold",
+                      item.status === "Ready"
+                        ? "bg-primary-3 text-primary-11"
+                        : "bg-gray-3 text-gray-11",
+                    )}
+                  >
+                    {item.status}
+                  </span>
                 </Row>
               ))}
             </Column>
@@ -320,7 +329,7 @@ function Home() {
           </Surface>
         </div>
 
-        <Surface className="gap-24 p-28">
+        <Surface className="gap-28 p-32">
           <SectionHeader
             description="A simple tabbed area for swapping between overview, workflow, and activity content."
             label="Tabbed preview"
@@ -400,7 +409,7 @@ function Surface(props: { children: ReactNode; className?: string }) {
   const { children, className } = props
 
   return (
-    <Column className={cn("rounded-16 border border-gray-4 bg-gray-1 shadow-1", className)}>
+    <Column className={cn("rounded-20 border border-gray-4 bg-gray-1 shadow-1", className)}>
       {children}
     </Column>
   )
@@ -444,11 +453,12 @@ function cn(...values: Array<string | undefined>) {
   return values.filter(Boolean).join(" ")
 }
 
-const eyebrowClassName = "text-12 font-bold uppercase text-primary-11"
+const eyebrowClassName = "text-12 font-bold uppercase tracking-widest text-primary-11"
 
-const titleClassName = "m-0 max-w-[72rem] text-[clamp(2.5rem,4vw,4.5rem)] leading-1 text-gray-12"
+const titleClassName =
+  "m-0 max-w-[72rem] text-[clamp(2.8rem,4vw,4.8rem)] leading-1 tracking-tight text-gray-12"
 
-const sectionTitleClassName = "m-0 text-[2.8rem] leading-[1.1] text-gray-12"
+const sectionTitleClassName = "m-0 text-[2.8rem] leading-[1.1] tracking-tight text-gray-12"
 
 const panelTitleClassName = "m-0 text-16 font-semibold text-gray-12"
 
@@ -456,14 +466,11 @@ const copyClassName = "m-0 text-14 leading-[1.6] text-gray-11"
 
 const metaClassName = "m-0 text-12 font-semibold text-gray-10"
 
-const statValueClassName = "text-[3.2rem] font-bold text-gray-12"
+const statValueClassName = "text-[3.2rem] font-bold text-primary-11"
 
 const itemTitleClassName = "text-14 font-semibold text-gray-12"
 
 const pillClassName = "rounded-full bg-primary-3 px-10 py-6 text-12 font-bold text-primary-11"
 
-const statusPillClassName =
-  "whitespace-nowrap rounded-full bg-gray-3 px-10 py-6 text-12 font-bold text-gray-11"
-
 const stepBadgeClassName =
-  "flex h-28 w-28 shrink-0 items-center justify-center rounded-full bg-primary-9 text-12 font-bold text-gray-1"
+  "flex h-32 w-32 shrink-0 items-center justify-center rounded-full bg-primary-9 text-12 font-bold text-gray-1"
