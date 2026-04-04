@@ -108,7 +108,7 @@ const activity = [
 
 function Home() {
   return (
-    <main className="min-h-screen bg-[linear-gradient(180deg,var(--color-gray-2)_0%,var(--color-white)_28%,var(--color-gray-1)_100%)] px-24 pt-40 pb-72">
+    <main className="bg-gray-2 min-h-screen px-24 pt-40 pb-80">
       <Column className="mx-auto w-full max-w-[112rem] gap-24">
         <Surface className="gap-24 p-28">
           <Row className="flex-wrap items-stretch justify-between gap-24">
@@ -397,7 +397,7 @@ function Surface(props: { children: ReactNode; className?: string }) {
   const { children, className } = props
 
   return (
-    <Column className={cn("rounded-[2.8rem] border border-gray-4 bg-white shadow-6", className)}>
+    <Column className={cn("rounded-[2.8rem] border border-gray-4 bg-white shadow-1", className)}>
       {children}
     </Column>
   )
@@ -441,20 +441,19 @@ function cn(...values: Array<string | undefined>) {
   return values.filter(Boolean).join(" ")
 }
 
-const eyebrowClassName = "text-12 font-bold uppercase tracking-[0.12em] text-primary-11"
+const eyebrowClassName = "text-12 font-bold uppercase text-primary-11"
 
-const titleClassName =
-  "m-0 max-w-[72rem] text-[clamp(2.5rem,4vw,4.5rem)] leading-1 tracking-[-0.04em] text-gray-12"
+const titleClassName = "m-0 max-w-[72rem] text-[clamp(2.5rem,4vw,4.5rem)] leading-1 text-gray-12"
 
-const sectionTitleClassName = "m-0 text-[2.8rem] leading-[1.1] tracking-[-0.03em] text-gray-12"
+const sectionTitleClassName = "m-0 text-[2.8rem] leading-[1.1] text-gray-12"
 
 const panelTitleClassName = "m-0 text-16 font-semibold text-gray-12"
 
 const copyClassName = "m-0 text-14 leading-[1.6] text-gray-11"
 
-const metaClassName = "m-0 text-12 font-semibold tracking-[0.02em] text-gray-10"
+const metaClassName = "m-0 text-12 font-semibold text-gray-10"
 
-const statValueClassName = "text-[3.2rem] font-bold tracking-[-0.04em] text-gray-12"
+const statValueClassName = "text-[3.2rem] font-bold text-gray-12"
 
 const itemTitleClassName = "text-14 font-semibold text-gray-12"
 
