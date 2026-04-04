@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "check:type": "tsc",
+    "update": "bun update --interactive --recursive"
+  },
+  "devDependencies": {
+    "@types/bun": "1.3.11",
+    "typescript": "6.0.2"
+  }
+}
