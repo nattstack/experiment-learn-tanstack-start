@@ -148,7 +148,7 @@ function Home() {
                 <span className={metaClassName}>Updated 2m ago</span>
               </Row>
 
-              <Column className="rounded-20 border-gray-4 gap-14 border bg-white p-16">
+              <Column className="rounded-20 border-gray-4 bg-gray-1 gap-14 border p-16">
                 <MetricRow label="Owner" value="Natt" />
                 <MetricRow label="Stage" value="Review" />
                 <MetricRow label="Feedback" value="12 notes" />
@@ -400,7 +400,7 @@ function Surface(props: { children: ReactNode; className?: string }) {
   const { children, className } = props
 
   return (
-    <Column className={cn("rounded-16 border border-gray-4 bg-white shadow-1", className)}>
+    <Column className={cn("rounded-16 border border-gray-4 bg-gray-1 shadow-1", className)}>
       {children}
     </Column>
   )
@@ -466,4 +466,4 @@ const statusPillClassName =
   "whitespace-nowrap rounded-full bg-gray-3 px-10 py-6 text-12 font-bold text-gray-11"
 
 const stepBadgeClassName =
-  "flex h-28 w-28 shrink-0 items-center justify-center rounded-full bg-primary-9 text-12 font-bold text-white"
+  "flex h-28 w-28 shrink-0 items-center justify-center rounded-full bg-primary-9 text-12 font-bold text-gray-1"
