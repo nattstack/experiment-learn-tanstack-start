@@ -1,7 +1,5 @@
 import { Outlet, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router"
-// src/routes/__root.tsx
-/// <reference types="vite/client" />
-import type { ReactNode } from "react"
+import type { PropsWithChildren } from "react"
 
 export const Route = createRootRoute({
   head: () => ({
@@ -29,13 +27,15 @@ function RootComponent() {
   )
 }
 
-function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
+function RootDocument(props: PropsWithChildren) {
+  const { children } = props
+
   return (
     <html>
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body className="color-gray-slate color-primary-blue">
         {children}
         <Scripts />
       </body>
