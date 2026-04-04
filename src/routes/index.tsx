@@ -226,11 +226,14 @@ function Home() {
                   key={toggle.title}
                   className="rounded-20 border-gray-4 bg-gray-1 items-center justify-between border p-16"
                 >
-                  <Column className="min-w-0 flex-1 gap-4 pr-16">
-                    <strong className={itemTitleClassName}>{toggle.title}</strong>
+                  <Column className="min-w-0 flex-1 pr-16">
+                    <Label className="text-14! text-gray-12!" htmlFor={toggle.title}>
+                      {toggle.title}
+                    </Label>
                     <span className={copyClassName}>{toggle.description}</span>
                   </Column>
                   <Switch
+                    id={toggle.title}
                     aria-label={toggle.title}
                     isDefaultChecked={toggle.defaultChecked}
                     size={24}
@@ -397,7 +400,7 @@ function Surface(props: { children: ReactNode; className?: string }) {
   const { children, className } = props
 
   return (
-    <Column className={cn("rounded-[2.8rem] border border-gray-4 bg-white shadow-1", className)}>
+    <Column className={cn("rounded-16 border border-gray-4 bg-white shadow-1", className)}>
       {children}
     </Column>
   )
