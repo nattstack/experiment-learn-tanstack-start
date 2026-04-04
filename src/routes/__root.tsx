@@ -44,7 +44,7 @@ function RootDocument(props: PropsWithChildren) {
       <head>
         <HeadContent />
       </head>
-      <body className="color-gray-slate color-primary-blue">
+      <body className="color-gray-slate color-primary-crimson">
         {children}
         <Scripts />
       </body>
