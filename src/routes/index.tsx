@@ -1,5 +1,4 @@
 import { Button, Row } from "@nattstack/ui"
-// src/routes/index.tsx
 import { createFileRoute } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/")({
