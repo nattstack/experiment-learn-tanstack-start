@@ -56,7 +56,7 @@ function SidebarLink(props: LinkProps) {
       activeOptions={{
         exact: true,
       }}
-      className="text-14 hover:bg-gray-3 rounded-8 data-[status=active]:bg-gray-4 data-[status=active]:text-gray-12 flex h-36 cursor-pointer items-center px-8"
+      className="text-14 hover:bg-gray-3 rounded-8 data-[status=active]:bg-gray-4 data-[status=active]:text-gray-12 flex h-32 cursor-pointer items-center px-8"
       to={to}
     >
       {children}
