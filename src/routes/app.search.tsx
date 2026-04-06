@@ -2,9 +2,7 @@ import { Column } from "@nattstack/ui"
 import { createFileRoute } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/app/search")({
-  component: RouteComponent,
+  component: function RouteAppSearch() {
+    return <Column className="">search</Column>
+  },
 })
-
-function RouteComponent() {
-  return <Column className="">search</Column>
-}

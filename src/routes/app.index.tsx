@@ -1,17 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/app/")({
-  component: RouteComponent,
+  component: function RouteAppIndex() {
+    return Array.from({ length: 100 }).map((_, index) => (
+      <p className="text-14 font-mono" key={index}>
+        {index + 1}
+      </p>
+    ))
+  },
 })
-
-function RouteComponent() {
-  return (
-    <>
-      {Array.from({ length: 64 }).map((_, index) => (
-        <p className="text-14 font-mono" key={index}>
-          {index + 1}
-        </p>
-      ))}
-    </>
-  )
-}
