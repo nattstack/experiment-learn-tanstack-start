@@ -8,6 +8,8 @@
     "update": "bun update --interactive --recursive"
   },
   "dependencies": {
+    "@nattstack/icons-filled": "npm:@central-icons-react/round-filled-radius-2-stroke-2@1.1.178",
+    "@nattstack/icons-outlined": "npm:@central-icons-react/round-outlined-radius-2-stroke-2@1.1.178",
     "@nattstack/ui": "0.0.2",
     "@tailwindcss/vite": "4.2.2",
     "@tanstack/react-router": "1.168.10",
