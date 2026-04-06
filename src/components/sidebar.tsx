@@ -20,7 +20,7 @@ interface SidebarProps {
 export function Sidebar(props: SidebarProps) {
   const { isExpanded, setIsExpanded } = props
 
-  const tooltipContent = isExpanded ? "Close sidebar" : "Open sidebar"
+  const tooltipContent = isExpanded ? "Collapse sidebar" : "Expand sidebar"
 
   return (
     <>
