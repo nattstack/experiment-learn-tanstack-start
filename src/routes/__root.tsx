@@ -1,7 +1,6 @@
 /// <reference types="vite/client" />
 
 import { Outlet, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router"
-import type { PropsWithChildren } from "react"
 import css from "../styles/global.css?url"
 
 export const Route = createRootRoute({
@@ -25,27 +24,17 @@ export const Route = createRootRoute({
       },
     ],
   }),
-  component: RootComponent,
+  component: RootDocument,
 })
 
-function RootComponent() {
-  return (
-    <RootDocument>
-      <Outlet />
-    </RootDocument>
-  )
-}
-
-function RootDocument(props: PropsWithChildren) {
-  const { children } = props
-
+function RootDocument() {
   return (
     <html>
       <head>
         <HeadContent />
       </head>
       <body className="color-gray-mauve color-primary-crimson">
-        {children}
+        <Outlet />
         <Scripts />
       </body>
     </html>
