@@ -9,16 +9,22 @@ export const Route = createFileRoute("/test")({
 
 function RouteTest() {
   return (
-    <Column className="bg-gray-2 min-h-dvh">
+    <Column className="bg-gray-2 min-h-dvh [--dimension-sidebar-width:240px] [--dimension-topbar-height:48px]">
       {/* Topbar */}
-      <Row as="header" className="bg-gray-2 sticky top-0 left-0 z-10 h-48 items-center px-16">
+      <Row
+        as="header"
+        className="bg-gray-2 border-gray-4 sticky top-0 left-0 z-10 h-(--dimension-topbar-height) items-center border-b px-16"
+      >
         <Logo />
       </Row>
 
       {/* Content */}
       <Row className="grow items-start">
         {/* Sidebar */}
-        <Column as="aside" className="sticky top-48 left-0 z-10 w-240 shrink-0">
+        <Column
+          as="aside"
+          className="border-gray-4 sticky top-48 left-0 z-10 h-[calc(100dvh-var(--dimension-topbar-height))] w-(--dimension-sidebar-width) shrink-0 overflow-y-auto border-r py-8"
+        >
           {/* Sidebar links */}
           <Column className="gap-y-1 px-8">
             <SidebarLink isActive>New chat</SidebarLink>
@@ -33,10 +39,7 @@ function RouteTest() {
         </Column>
 
         {/* Main */}
-        <Column
-          as="main"
-          className="bg-gray-1 border-gray-4 rounded-8 shadow-2 mr-8 mb-8 grow border px-24"
-        >
+        <Column as="main" className="bg-gray-1 grow px-24 py-24">
           <p className="text-14 font-mono">1 main</p>
           <p className="text-14 font-mono">main</p>
           <p className="text-14 font-mono">main</p>
