@@ -5,8 +5,8 @@
     "": {
       "name": "experiment-learn-tanstack-start",
       "dependencies": {
-        "@nattstack/icons-filled": "npm:@central-icons-react/round-filled-radius-2-stroke-2@1.1.178",
-        "@nattstack/icons-outlined": "npm:@central-icons-react/round-outlined-radius-2-stroke-2@1.1.178",
+        "@nattstack/icons-filled": "npm:@central-icons-react/round-filled-radius-3-stroke-1.5@1.1.178",
+        "@nattstack/icons-outlined": "npm:@central-icons-react/round-outlined-radius-3-stroke-1.5@1.1.178",
         "@nattstack/ui": "0.0.2",
         "@tailwindcss/vite": "4.2.2",
         "@tanstack/react-router": "1.168.10",
@@ -151,9 +151,9 @@
 
     "@napi-rs/wasm-runtime": ["@napi-rs/wasm-runtime@1.1.2", "", { "dependencies": { "@tybys/wasm-util": "^0.10.1" }, "peerDependencies": { "@emnapi/core": "^1.7.1", "@emnapi/runtime": "^1.7.1" } }, "sha512-sNXv5oLJ7ob93xkZ1XnxisYhGYXfaG9f65/ZgYuAu3qt7b3NadcOEhLvx28hv31PgX8SZJRYrAIPQilQmFpLVw=="],
 
-    "@nattstack/icons-filled": ["@central-icons-react/round-filled-radius-2-stroke-2@1.1.178", "", { "peerDependencies": { "react": ">=14.0.0 <= 19" } }, "sha512-szH830hPS19uTB4Aq1MxZKRGfnfYEUPMvJOVE7Sx+BZcU5Xd+2tM0rDTLZ2hSgygMaqo47OhmGKDZP/rvXr3dQ=="],
+    "@nattstack/icons-filled": ["@central-icons-react/round-filled-radius-3-stroke-1.5@1.1.178", "", { "peerDependencies": { "react": ">=14.0.0 <= 19" } }, "sha512-vXe+oNZzNq6R6KQkCMaZGbUZUIR//g793d8Njd/N2krOXTykVM61sCwzAsFLncHqjyYWcm33FGpskUnaM8916w=="],
 
-    "@nattstack/icons-outlined": ["@central-icons-react/round-outlined-radius-2-stroke-2@1.1.178", "", { "peerDependencies": { "react": ">=14.0.0 <= 19" } }, "sha512-Ocu0+fP7Mwe0ndmdukTzQID6zgx65h5qqn1kJv+LJj+bY6Q7M3w2CApC0/6dR79q4bVlCm62BFNL4vuuotadEA=="],
+    "@nattstack/icons-outlined": ["@central-icons-react/round-outlined-radius-3-stroke-1.5@1.1.178", "", { "peerDependencies": { "react": ">=14.0.0 <= 19" } }, "sha512-ktLF307oF6mD7My2T0GcNz2uEKAHXQyUfk5kxyEIm9HAKkXRRF9OPgqBKT/flbD74Sw2y1MTdsEf5rJ1omFh7A=="],
 
     "@nattstack/ui": ["@nattstack/ui@0.0.2", "", { "dependencies": { "@base-ui/react": "1.3.0" }, "peerDependencies": { "react": "^18.0.0 || ^19.0.0", "react-dom": "^18.0.0 || ^19.0.0" } }, "sha512-eSRB7KsUQfCIMJAlBkpEn+yrevBg7UiQe/QF+g4eIMbiT4Ew+VN9PAP8ShHhyEOuUZD3nLaoO+bMjDIQ/anX9A=="],
 

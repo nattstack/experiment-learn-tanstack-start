@@ -93,7 +93,7 @@ function SidebarLink(props: SidebarLinkProps) {
       activeOptions={{
         exact: true,
       }}
-      className="text-14 hover:bg-gray-3 rounded-8 data-[status=active]:bg-gray-4 data-[status=active]:text-gray-12 flex h-36 shrink-0 cursor-pointer items-center px-8"
+      className="text-14 hover:bg-gray-3 rounded-8 data-[status=active]:bg-gray-4 data-[status=active]:text-gray-12 text-gray-12 flex h-36 shrink-0 cursor-pointer items-center px-8"
       to={to}
     >
       <Icon className="mr-8 size-20" />
