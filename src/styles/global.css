@@ -8,6 +8,7 @@
 @theme {
   --font-\*: initial;
   --font-display: "Inter Tight", sans-serif;
+  --font-mono: monospace;
   --font-sans: "Inter", sans-serif;
 }
 

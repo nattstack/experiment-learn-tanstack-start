@@ -7,22 +7,22 @@ export const Route = createFileRoute("/test")({
 
 function RouteTest() {
   return (
-    <Column className="min-h-dvh">
+    <Column className="bg-gray-2 min-h-dvh">
       {/* Topbar */}
-      <Row as="header" className="h-64">
-        topbar
+      <Row as="header" className="h-48">
+        <p className="text-14 font-mono">topbar</p>
       </Row>
 
       {/* Content */}
-      <Row className="d grow">
+      <Row className="grow">
         {/* Sidebar */}
-        <Row as="aside" className="d w-240 shrink-0">
-          sidebar
+        <Row as="aside" className="w-240 shrink-0">
+          <p className="text-14 font-mono">sidebar</p>
         </Row>
 
         {/* Main */}
-        <Row as="main" className="d grow">
-          main
+        <Row as="main" className="bg-gray-1 border-gray-4 rounded-8 shadow-2 m-8 grow border px-24">
+          <p className="text-14 font-mono">main</p>
         </Row>
       </Row>
     </Column>
