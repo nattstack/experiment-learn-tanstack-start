@@ -29,17 +29,6 @@ export function Sidebar(props: SidebarProps) {
         className="bg-gray-2 border-gray-4 max-768:hidden! fixed top-(--dimension-topbar-height) left-0 z-10 h-[calc(100dvh-var(--dimension-topbar-height))] w-(--dimension-sidebar-width) shrink-0 border-r py-8 transition-[left] data-[is-sidebar-expanded=false]:-left-(--dimension-sidebar-width)"
         data-is-sidebar-expanded={isExpanded}
       >
-        {/* <Column className="mx-16">
-        <Button
-        isFullWidth
-        onClick={() => setIsSidebarExpanded(!isSidebarExpanded)}
-        variant="secondary"
-        >
-        isSidebarExpanded: {isSidebarExpanded.toString()}
-        </Button>
-        </Column>
-        <Spacer height={8} /> */}
-
         {/* Links */}
         <Column className="gap-y-2 overflow-y-auto px-8">
           <SidebarLink icon={IconEditBig} to="/app">
