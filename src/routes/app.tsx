@@ -14,7 +14,9 @@ function RouteComponent() {
         as="header"
         className="bg-gray-2 border-gray-4 sticky top-0 left-0 z-10 h-(--dimension-topbar-height) items-center border-b px-16"
       >
-        <Logo />
+        <Link to="/app" className="-ml-8 p-8 transition-opacity hover:opacity-50">
+          <Logo />
+        </Link>
       </Row>
 
       {/* Content */}
@@ -54,7 +56,7 @@ function SidebarLink(props: LinkProps) {
       activeOptions={{
         exact: true,
       }}
-      className="text-14 hover:bg-gray-3 rounded-8 data-[status=active]:bg-gray-4 flex h-36 cursor-pointer items-center px-8"
+      className="text-14 hover:bg-gray-3 rounded-8 data-[status=active]:bg-gray-4 data-[status=active]:text-gray-12 flex h-36 cursor-pointer items-center px-8"
       to={to}
     >
       {children}
