@@ -7,11 +7,24 @@ export const Route = createFileRoute("/test")({
 
 function RouteTest() {
   return (
-    <Column className="d min-h-dvh">
-      <Row as="header" className="d h-64">
+    <Column className="min-h-dvh">
+      {/* Topbar */}
+      <Row as="header" className="h-64">
         topbar
       </Row>
-      <Row className="d h-full">content</Row>
+
+      {/* Content */}
+      <Row className="d grow">
+        {/* Sidebar */}
+        <Row as="aside" className="d w-240 shrink-0">
+          sidebar
+        </Row>
+
+        {/* Main */}
+        <Row as="main" className="d grow">
+          main
+        </Row>
+      </Row>
     </Column>
   )
 }
