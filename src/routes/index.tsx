@@ -124,7 +124,7 @@ function Home() {
                 </p>
               </Column>
               <Row className="flex-wrap gap-12">
-                <Button size={48} variant="accent">
+                <Button size={48} variant="primary">
                   Create workspace
                 </Button>
                 <Button size={48} variant="secondary">
