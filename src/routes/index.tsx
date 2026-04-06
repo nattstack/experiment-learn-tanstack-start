@@ -108,7 +108,7 @@ const activity = [
 
 function Home() {
   return (
-    <main className="bg-gray-2 min-h-screen px-24 pt-48 pb-80">
+    <main className="d min-h-screen px-24 pt-48 pb-80">
       <Column className="mx-auto w-full max-w-[112rem] gap-32">
         <Surface className="from-primary-3 gap-28 bg-linear-to-br to-transparent p-36">
           <Row className="flex-wrap items-stretch justify-between gap-28">
