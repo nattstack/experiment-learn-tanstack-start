@@ -12,7 +12,7 @@ export function Topbar() {
     <>
       <Row
         as="header"
-        className="bg-gray-2 fixed top-0 left-0 z-10 h-(--dimension-topbar-height) w-full items-center px-16"
+        className="bg-secondary fixed top-0 left-0 z-10 h-(--dimension-topbar-height) w-full items-center px-16"
       >
         {/* Logo */}
         <Link to="/app" className="-ml-8 p-8 transition-opacity hover:opacity-50">

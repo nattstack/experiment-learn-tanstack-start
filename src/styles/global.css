@@ -1,8 +1,10 @@
-@import "@fontsource-variable/inter-tight/wght-italic.css";
-@import "@fontsource-variable/inter/wght.css";
+@import "tailwindcss";
 @import "@nattstack/ui/tailwind-colors";
 @import "@nattstack/ui/tailwind-tokenless-10";
-@import "tailwindcss";
+@import "@fontsource-variable/inter-tight/wght-italic.css";
+@import "@fontsource-variable/inter/wght.css";
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --font-\*: initial;
@@ -12,16 +14,16 @@
 }
 
 @layer base {
-  .d {
-    border: 2px dashed red;
-  }
-
   /* Defaults */
   body {
     background-color: var(--color-gray-2);
     color: var(--color-gray-11);
     font-family: var(--font-sans);
     font-size: 16px;
+  }
+
+  body.dark {
+    background-color: var(--color-gray-1);
   }
 
   a,
@@ -45,5 +47,19 @@
   h6 {
     color: var(--color-gray-12);
     font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .d {
+    border: 2px dashed red;
+  }
+
+  .bg-primary {
+    @apply bg-gray-1 dark:bg-gray-2;
+  }
+
+  .bg-secondary {
+    @apply bg-gray-2 dark:bg-gray-1;
   }
 }
