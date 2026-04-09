@@ -1,10 +1,10 @@
-import css from "../styles/global.css?url"
+import CSS from "../styles/global.css?url"
 
 export function RouteRootHead() {
   return {
     links: [
       {
-        href: css,
+        href: CSS,
         rel: "stylesheet",
       },
     ],
