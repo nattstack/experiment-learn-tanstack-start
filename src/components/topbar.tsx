@@ -1,12 +1,12 @@
 import { IconLayoutAlignLeft } from "@nattstack/icons-outlined"
-import { Button, Row, Spacer } from "@nattstack/ui"
+import { Button, Row, Spacer, Tooltip, TooltipContent, TooltipTrigger } from "@nattstack/ui"
 import { Link } from "@tanstack/react-router"
 import { Logo } from "./logo"
 import { useSidebarStore } from "./sidebar"
 
 export function Topbar() {
-  const setSidebarDesktopIsCollapsed = useSidebarStore((state) => state.desktopSetIsCollapsed)
   const sidebarDesktopIsCollapsed = useSidebarStore((state) => state.desktopIsCollapsed)
+  const sidebarDesktopSetIsCollapsed = useSidebarStore((state) => state.desktopSetIsCollapsed)
 
   return (
     <>
@@ -22,15 +22,24 @@ export function Topbar() {
         <div className="bg-gray-4 mx-4 h-24 w-1" />
 
         {/* Toggle sidebar */}
-        <Button
-          className="text-gray-11! hover:text-gray-12! transition-[background-color,color,opacity,translate]!"
-          isIconOnly
-          onClick={() => setSidebarDesktopIsCollapsed(!sidebarDesktopIsCollapsed)}
-          size={32}
-          variant="ghost"
-        >
-          <IconLayoutAlignLeft size={20} />
-        </Button>
+        <Tooltip>
+          <TooltipTrigger
+            render={
+              <Button
+                className="text-gray-11! hover:text-gray-12! transition-[background-color,color,opacity,translate]!"
+                isIconOnly
+                onClick={() => sidebarDesktopSetIsCollapsed(!sidebarDesktopIsCollapsed)}
+                size={32}
+                variant="ghost"
+              >
+                <IconLayoutAlignLeft size={20} />
+              </Button>
+            }
+          />
+          <TooltipContent side="bottom">
+            {sidebarDesktopIsCollapsed ? "Expand" : "Collapse"} sidebar
+          </TooltipContent>
+        </Tooltip>
       </Row>
       <Spacer height="var(--dimension-topbar-height)" />
     </>
