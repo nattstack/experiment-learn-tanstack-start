@@ -1,22 +1,19 @@
 import { Column, Row, Spacer } from "@nattstack/ui"
 import { createFileRoute, Link, Outlet } from "@tanstack/react-router"
-import { useState } from "react"
 import { Logo } from "../components/logo"
 import { Sidebar } from "../components/sidebar"
 
 export const Route = createFileRoute("/app")({
   component: function RouteApp() {
-    const [isSidebarExpanded, setIsSidebarExpanded] = useState(true)
-
     return (
-      <Column className="min-h-dvh [--dimension-sidebar-width:240px] [--dimension-topbar-height:56px]">
+      <Column className="min-h-dvh [--dimension-sidebar-desktop-width-collapsed:52px] [--dimension-sidebar-desktop-width-expanded:240px] [--dimension-topbar-height:56px]">
         {/* Topbar */}
         <Topbar />
 
         {/* Content */}
         <Row className="grow">
           {/* Sidebar */}
-          <Sidebar isExpanded={isSidebarExpanded} setIsExpanded={setIsSidebarExpanded} />
+          <Sidebar />
 
           {/* Main */}
           <Column
