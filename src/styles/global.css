@@ -1,15 +1,14 @@
-/* Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-
-@import "tailwindcss";
+@import "@fontsource-variable/inter-tight/wght-italic.css";
+@import "@fontsource-variable/inter/wght.css";
 @import "@nattstack/ui/tailwind-colors";
 @import "@nattstack/ui/tailwind-tokenless-10";
+@import "tailwindcss";
 
 @theme {
   --font-\*: initial;
-  --font-display: "Inter Tight", sans-serif;
+  --font-display: "Inter Tight Variable", sans-serif;
   --font-mono: monospace;
-  --font-sans: "Inter", sans-serif;
+  --font-sans: "Inter Variable", sans-serif;
 }
 
 @layer base {
