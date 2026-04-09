@@ -17,7 +17,7 @@ export const Route = createRootRoute({
           charSet: "utf-8",
         },
         {
-          content: "width=device-width, initial-scale=1",
+          content: "initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width",
           name: "viewport",
         },
         {
