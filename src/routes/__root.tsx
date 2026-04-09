@@ -1,5 +1,6 @@
 /// <reference types="vite/client" />
 
+import { TooltipProvider } from "@nattstack/ui"
 import { Outlet, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router"
 import css from "../styles/global.css?url"
 
@@ -33,7 +34,9 @@ export const Route = createRootRoute({
           <HeadContent />
         </head>
         <body className="color-gray-mauve color-primary-crimson">
-          <Outlet />
+          <TooltipProvider>
+            <Outlet />
+          </TooltipProvider>
           <Scripts />
         </body>
       </html>

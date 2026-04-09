@@ -9,7 +9,7 @@ import {
   IconMagnifyingGlass,
   IconTelescope,
 } from "@nattstack/icons-outlined"
-import { Column, Spacer } from "@nattstack/ui"
+import { Column, Spacer, Tooltip, TooltipContent, TooltipTrigger } from "@nattstack/ui"
 import { Link, type LinkProps } from "@tanstack/react-router"
 import type { ComponentType } from "react"
 import { create } from "zustand"
@@ -71,21 +71,28 @@ function SidebarLink(props: SidebarLinkProps) {
   const sidebarDesktopIsCollapsed = useSidebarStore((state) => state.desktopIsCollapsed)
 
   return (
-    <Link
-      activeOptions={{
-        exact: true,
-      }}
-      className="text-14 hover:bg-gray-3 rounded-8 data-[status=active]:bg-gray-4 data-[status=active]:text-gray-12 hover:text-gray-12 flex h-36 shrink-0 cursor-pointer items-center overflow-hidden px-8 font-[450] transition-colors"
-      to={to}
-    >
-      <Icon size={20} className="mr-8 shrink-0" />
-      <span
-        className="text-nowrap transition-opacity data-[sidebar-desktop-is-collapsed=true]:opacity-0"
-        data-sidebar-desktop-is-collapsed={sidebarDesktopIsCollapsed}
-      >
-        {label}
-      </span>
-    </Link>
+    <Tooltip disabled={!sidebarDesktopIsCollapsed}>
+      <TooltipTrigger
+        render={
+          <Link
+            activeOptions={{
+              exact: true,
+            }}
+            className="text-14 hover:bg-gray-3 rounded-8 data-[status=active]:bg-gray-4 data-[status=active]:text-gray-12 hover:text-gray-12 flex h-36 shrink-0 cursor-pointer items-center overflow-hidden px-8 font-[450] transition-colors"
+            to={to}
+          >
+            <Icon size={20} className="mr-8 shrink-0" />
+            <span
+              className="text-nowrap transition-opacity data-[sidebar-desktop-is-collapsed=true]:opacity-0"
+              data-sidebar-desktop-is-collapsed={sidebarDesktopIsCollapsed}
+            >
+              {label}
+            </span>
+          </Link>
+        }
+      />
+      <TooltipContent side="right">{label}</TooltipContent>
+    </Tooltip>
   )
 }
 
