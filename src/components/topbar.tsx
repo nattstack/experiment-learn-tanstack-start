@@ -15,7 +15,7 @@ export function Topbar() {
         className="bg-bg-secondary fixed top-0 left-0 z-10 h-(--dimension-topbar-height) w-full items-center px-16"
       >
         {/* Logo */}
-        <Link to="/app" className="-ml-8 p-8 transition-opacity hover:opacity-50">
+        <Link to="/app" className="-ml-8 p-8 transition-opacity hover:opacity-75">
           <Logo />
         </Link>
 
