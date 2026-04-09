@@ -7,6 +7,7 @@ import {
   IconEditBig,
   IconImages1,
   IconMagnifyingGlass,
+  IconSettingsGear2,
   IconTelescope,
 } from "@nattstack/icons-outlined"
 import { Column, Tooltip, TooltipContent, TooltipTrigger } from "@nattstack/ui"
@@ -27,6 +28,7 @@ export function Sidebar() {
         <SidebarLink icon={IconTelescope} label="Deep research" />
         <SidebarLink icon={IconAppleIntelligenceIcon} label="Codex" />
         <SidebarLink icon={Icon3dBoxTop} label="GPTs" />
+        <SidebarLink icon={IconSettingsGear2} label="Settings" to="/app/settings" />
       </Column>
     </Column>
   )
