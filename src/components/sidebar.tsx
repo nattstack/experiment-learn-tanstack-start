@@ -71,7 +71,7 @@ function SidebarLink(props: SidebarLinkProps) {
   const sidebarDesktopIsCollapsed = useSidebarStore((state) => state.desktopIsCollapsed)
 
   return (
-    <Tooltip disabled={!sidebarDesktopIsCollapsed}>
+    <Tooltip isDisabled={!sidebarDesktopIsCollapsed}>
       <TooltipTrigger
         render={
           <Link
