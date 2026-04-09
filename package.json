@@ -12,7 +12,7 @@
     "@fontsource-variable/inter-tight": "^5.2.7",
     "@nattstack/icons-filled": "npm:@central-icons-react/round-filled-radius-3-stroke-2@1.1.182",
     "@nattstack/icons-outlined": "npm:@central-icons-react/round-outlined-radius-3-stroke-2@1.1.182",
-    "@nattstack/ui": "0.0.5",
+    "@nattstack/ui": "0.0.6",
     "@tailwindcss/vite": "4.2.2",
     "@tanstack/react-router": "1.168.10",
     "@tanstack/react-start": "1.167.16",
