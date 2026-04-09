@@ -5,8 +5,8 @@ import { Logo } from "./logo"
 import { useSidebarStore } from "./sidebar"
 
 export function Topbar() {
-  const sidebarDesktopIsCollapsed = useSidebarStore((state) => state.desktopIsCollapsed)
   const setSidebarDesktopIsCollapsed = useSidebarStore((state) => state.desktopSetIsCollapsed)
+  const sidebarDesktopIsCollapsed = useSidebarStore((state) => state.desktopIsCollapsed)
 
   return (
     <>
