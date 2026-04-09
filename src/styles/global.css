@@ -23,7 +23,7 @@
 
   a,
   button {
-    outline-color: var(--color-primary-9);
+    outline-color: var(--color-outline);
     outline-offset: -2px;
     outline-style: solid;
     outline-width: 0;

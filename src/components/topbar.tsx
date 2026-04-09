@@ -19,14 +19,15 @@ export function Topbar() {
           <Logo />
         </Link>
 
-        <div className="bg-gray-4 mx-4 h-24 w-1" />
+        {/* Separator */}
+        <div className="bg-border max-768:hidden mx-4 h-24 w-1" />
 
         {/* Toggle sidebar */}
         <Tooltip>
           <TooltipTrigger
             render={
               <Button
-                className="text-gray-11! hover:text-gray-12! transition-[background-color,color,opacity,translate]!"
+                className="text-gray-11! max-768:hidden! hover:text-gray-12! transition-[background-color,color,opacity,translate]!"
                 isIconOnly
                 onClick={() => sidebarDesktopSetIsCollapsed(!sidebarDesktopIsCollapsed)}
                 size={32}
@@ -36,7 +37,7 @@ export function Topbar() {
               </Button>
             }
           />
-          <TooltipContent side="bottom">
+          <TooltipContent className="max-768:hidden!" side="bottom">
             {sidebarDesktopIsCollapsed ? "Expand" : "Collapse"} sidebar
           </TooltipContent>
         </Tooltip>
