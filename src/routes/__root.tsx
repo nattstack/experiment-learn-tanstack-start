@@ -29,11 +29,11 @@ export const Route = createRootRoute({
   },
   component: function RouteRoot() {
     return (
-      <html>
+      <html className="color-gray-mauve color-primary-crimson">
         <head>
           <HeadContent />
         </head>
-        <body className="color-gray-mauve color-primary-crimson">
+        <body>
           <TooltipProvider>
             <Outlet />
           </TooltipProvider>
