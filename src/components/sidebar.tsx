@@ -9,52 +9,26 @@ import {
   IconMagnifyingGlass,
   IconTelescope,
 } from "@nattstack/icons-outlined"
-import { Column, Spacer, Tooltip, TooltipContent, TooltipTrigger } from "@nattstack/ui"
+import { Column, Tooltip, TooltipContent, TooltipTrigger } from "@nattstack/ui"
 import { Link, type LinkProps } from "@tanstack/react-router"
 import type { ComponentType } from "react"
 import { create } from "zustand"
 
 export function Sidebar() {
-  const sidebarDesktopIsCollapsed = useSidebarStore((state) => state.desktopIsCollapsed)
-
   return (
-    <>
-      <Column
-        as="aside"
-        className="bg-bg-secondary max-768:hidden! fixed top-(--dimension-topbar-height) left-0 z-10 h-[calc(100dvh-var(--dimension-topbar-height))] w-(--dimension-sidebar-desktop-width-expanded) shrink-0 transition-[width] data-[sidebar-desktop-is-collapsed=true]:w-(--dimension-sidebar-desktop-width-collapsed)"
-        data-sidebar-desktop-is-collapsed={sidebarDesktopIsCollapsed}
-      >
-        {/* <Spacer height={8} /> */}
-
-        {/* Links */}
-        <Column className="gap-y-2 overflow-y-auto px-8">
-          <SidebarLink icon={IconEditBig} label="New chat" to="/app" />
-          <SidebarLink icon={IconMagnifyingGlass} label="Search chats" to="/app/search" />
-          <SidebarLink icon={IconImages1} label="Images" />
-          <SidebarLink icon={IconBooks} label="Library" />
-          <SidebarLink icon={IconApps} label="Apps" />
-          <SidebarLink icon={IconTelescope} label="Deep research" />
-          <SidebarLink icon={IconAppleIntelligenceIcon} label="Codex" />
-          <SidebarLink icon={Icon3dBoxTop} label="GPTs" />
-        </Column>
-
-        <Spacer className="grow" />
-
-        {/* Toggle */}
-        {/* <button
-          className="border-gray-4 hover:bg-gray-3 flex cursor-pointer items-center justify-end border-t py-16 pr-16 transition-colors"
-          onClick={() => setIsExpanded(!isExpanded)}
-        >
-          <IconChevronDoubleLeft size={20} />
-        </button> */}
+    <Column className="h-full">
+      {/* Links */}
+      <Column className="gap-y-2 overflow-y-auto px-8">
+        <SidebarLink icon={IconEditBig} label="New chat" to="/app" />
+        <SidebarLink icon={IconMagnifyingGlass} label="Search chats" to="/app/search" />
+        <SidebarLink icon={IconImages1} label="Images" />
+        <SidebarLink icon={IconBooks} label="Library" />
+        <SidebarLink icon={IconApps} label="Apps" />
+        <SidebarLink icon={IconTelescope} label="Deep research" />
+        <SidebarLink icon={IconAppleIntelligenceIcon} label="Codex" />
+        <SidebarLink icon={Icon3dBoxTop} label="GPTs" />
       </Column>
-
-      {/* Spacer */}
-      <Spacer
-        className="max-768:hidden w-(--dimension-sidebar-desktop-width-expanded) transition-[width] data-[sidebar-desktop-is-collapsed=true]:w-(--dimension-sidebar-desktop-width-collapsed)"
-        data-sidebar-desktop-is-collapsed={sidebarDesktopIsCollapsed}
-      />
-    </>
+    </Column>
   )
 }
 
