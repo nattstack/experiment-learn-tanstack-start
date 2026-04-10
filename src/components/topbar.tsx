@@ -2,7 +2,7 @@ import { IconBarsThree, IconLayoutAlignLeft } from "@nattstack/icons-outlined"
 import { Button, Row, Spacer, Tooltip, TooltipContent, TooltipTrigger } from "@nattstack/ui"
 import { Link } from "@tanstack/react-router"
 import { Logo } from "./logo"
-import { useSidebarStore } from "./sidebar"
+import { useSidebarStore } from "./sidebar-content"
 
 export function Topbar() {
   const sidebarDesktopIsCollapsed = useSidebarStore((state) => state.desktopIsCollapsed)

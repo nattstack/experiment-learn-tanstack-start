@@ -5,6 +5,7 @@ import {
   IconArrowLeft,
   IconBooks,
   IconEditBig,
+  IconGroup3,
   IconImages1,
   IconMagnifyingGlass,
   IconPeople,
@@ -16,7 +17,7 @@ import { useRouterState } from "@tanstack/react-router"
 import { create } from "zustand"
 import { SidebarLink } from "./sidebar-link"
 
-export function Sidebar() {
+export function SidebarContent() {
   const isRouteSettings = useRouterState({
     select: (state) => state.matches.some((match) => match.routeId === "/app/settings"),
   })
@@ -34,6 +35,7 @@ function SidebarContentSettings() {
       <Column className="gap-y-2 overflow-y-auto px-8">
         <SidebarLink icon={IconArrowLeft} label="Back" to="/app" />
         <SidebarLink icon={IconPeople} label="Account" to="/app/settings" />
+        <SidebarLink icon={IconGroup3} label="Groups" to="/app/search" />
       </Column>
     </Column>
   )

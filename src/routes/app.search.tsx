@@ -1,7 +1,7 @@
 import { IconAirplayAudio, IconSearchIntelligence } from "@nattstack/icons-outlined"
 import { Button, Column, Row, Spacer } from "@nattstack/ui"
 import { createFileRoute } from "@tanstack/react-router"
-import { useSidebarStore } from "../components/sidebar"
+import { useSidebarStore } from "../components/sidebar-content"
 
 export const Route = createFileRoute("/app/search")({
   component: function RouteAppSearch() {
@@ -10,6 +10,8 @@ export const Route = createFileRoute("/app/search")({
 
     return (
       <>
+        <Spacer height={64} />
+
         <p>asdf</p>
         <p>asdf</p>
         <p>asdf</p>

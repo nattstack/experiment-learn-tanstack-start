@@ -21,7 +21,7 @@ export const Route = createFileRoute("/app")({
             className="bg-bg-primary border-border rounded-8 shadow-2 max-768:mr-0 max-768:mb-0 max-768:rounded-none max-768:shadow-none max-768:border-none max-768:bg-transparent mr-8 mb-8 grow border"
           >
             {/* Main wrapper */}
-            <Column className="mx-auto w-full max-w-768 p-16">
+            <Column className="mx-auto w-full max-w-768 px-16">
               <Outlet />
             </Column>
           </Column>

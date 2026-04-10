@@ -2,7 +2,7 @@ import { type CentralIconBaseProps } from "@nattstack/icons-outlined"
 import { Tooltip, TooltipContent, TooltipTrigger } from "@nattstack/ui"
 import { Link, type LinkProps } from "@tanstack/react-router"
 import type { ComponentType } from "react"
-import { useSidebarStore } from "./sidebar"
+import { useSidebarStore } from "./sidebar-content"
 
 interface SidebarLinkProps extends Omit<LinkProps, "children"> {
   icon: ComponentType<CentralIconBaseProps>
