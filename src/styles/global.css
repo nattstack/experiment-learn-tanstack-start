@@ -2,7 +2,7 @@
 @import "@nattstack/ui/tailwind-colors";
 @import "@nattstack/ui/tailwind-tokenless-10";
 @import "@nattstack/ui/baseline";
-@import "@fontsource-variable/inter-tight/wght-italic.css";
+@import "@fontsource-variable/inter-tight/wght.css";
 @import "@fontsource-variable/inter/wght.css";
 @import "@fontsource/commit-mono";
 
@@ -11,4 +11,10 @@
   --font-body: "Inter Variable", sans-serif;
   --font-code: "Commit Mono", monospace;
   --font-heading: "Inter Tight Variable", sans-serif;
+}
+
+a,
+button,
+p {
+  letter-spacing: -0.02em;
 }

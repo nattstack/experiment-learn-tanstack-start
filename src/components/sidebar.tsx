@@ -22,7 +22,7 @@ export function Sidebar() {
       <Column className="gap-y-2 overflow-y-auto px-8">
         <SidebarLink icon={IconEditBig} label="New chat" to="/app" />
         <SidebarLink icon={IconMagnifyingGlass} label="Search chats" to="/app/search" />
-        <SidebarLink icon={IconImages1} label="Images" />
+        <SidebarLink icon={IconImages1} label="Images" to="/app/settings" />
         <SidebarLink icon={IconBooks} label="Library" />
         <SidebarLink icon={IconApps} label="Apps" />
         <SidebarLink icon={IconTelescope} label="Deep research" />
