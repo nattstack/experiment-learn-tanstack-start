@@ -1,60 +1,14 @@
 @import "tailwindcss";
 @import "@nattstack/ui/tailwind-colors";
-@import "@nattstack/ui/tailwind-colors-semantic";
 @import "@nattstack/ui/tailwind-tokenless-10";
+@import "@nattstack/ui/baseline";
 @import "@fontsource-variable/inter-tight/wght-italic.css";
 @import "@fontsource-variable/inter/wght.css";
 @import "@fontsource/commit-mono";
 
 @theme {
   --font-\*: initial;
-  --font-display: "Inter Tight Variable", sans-serif;
-  --font-mono: "Commit Mono", monospace;
-  --font-sans: "Inter Variable", sans-serif;
-}
-
-@layer base {
-  /* Defaults */
-  body {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    background-color: var(--color-bg-secondary);
-    color: var(--color-text-secondary);
-    font-family: var(--font-sans);
-  }
-
-  @media (max-width: 768px) {
-    body[data-is-app="true"] {
-      background-color: var(--color-bg-primary);
-    }
-  }
-
-  a,
-  button {
-    outline-color: var(--color-outline);
-    outline-offset: -2px;
-    outline-style: solid;
-    outline-width: 0;
-  }
-
-  a:focus-visible,
-  button:focus-visible {
-    outline-width: 2px;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: var(--color-text-primary);
-    font-family: var(--font-display);
-  }
-}
-
-@layer utilities {
-  .d {
-    border: 2px dashed red;
-  }
+  --font-body: "Inter Variable", sans-serif;
+  --font-code: "Commit Mono", monospace;
+  --font-heading: "Inter Tight Variable", sans-serif;
 }

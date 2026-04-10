@@ -4,7 +4,10 @@ export const Route = createFileRoute("/app/settings")({
   component: function RouteAppSettings() {
     return (
       <>
-        <p className="text-14">Settings page</p>
+        <p>Settings page</p>
+        <p>Test</p>
+        <a href="https://www.google.com">Test</a>
+        <code>Test</code>
       </>
     )
   },
