@@ -16,6 +16,8 @@
 @layer base {
   /* Defaults */
   body {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
     background-color: var(--color-bg-secondary);
     color: var(--color-text-secondary);
     font-family: var(--font-sans);
