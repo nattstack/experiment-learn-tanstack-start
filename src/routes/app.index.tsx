@@ -11,6 +11,7 @@ export const Route = createFileRoute("/app/")({
             {index + 1}
           </p>
         ))}
+        <Spacer height={144} />
       </>
     )
   },

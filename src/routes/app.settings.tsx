@@ -9,12 +9,12 @@ export const Route = createFileRoute("/app/settings")({
 
         <Label htmlFor="name">Name</Label>
         <Spacer height={4} />
-        <Input name="name" id="name" placeholder="Name" />
+        <Input className="max-w-320" name="name" id="name" placeholder="Name" />
         <Spacer height={32} />
 
         <Label htmlFor="email">Email</Label>
         <Spacer height={4} />
-        <Input name="email" id="email" placeholder="Email" type="email" />
+        <Input className="max-w-320" name="email" id="email" placeholder="Email" type="email" />
         <Spacer height={32} />
 
         <Button>Save</Button>
