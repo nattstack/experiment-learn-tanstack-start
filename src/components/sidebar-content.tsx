@@ -19,7 +19,7 @@ import { SidebarLink } from "./sidebar-link"
 
 export function SidebarContent() {
   const matchRoute = useMatchRoute()
-  const isRouteSettings = Boolean(matchRoute({ to: "/app/settings" }))
+  const isRouteSettings = Boolean(matchRoute({ fuzzy: true, to: "/app/settings" }))
 
   if (isRouteSettings) {
     return <SidebarContentSettings />
