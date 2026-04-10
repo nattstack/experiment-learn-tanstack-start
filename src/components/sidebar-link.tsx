@@ -4,15 +4,15 @@ import { Link, type LinkProps } from "@tanstack/react-router"
 import type { ComponentType } from "react"
 import { useSidebarStore } from "./sidebar-content"
 
-interface SidebarLinkProps extends Omit<LinkProps, "children"> {
+export interface SidebarLinkProps extends Omit<LinkProps, "children"> {
   icon: ComponentType<CentralIconBaseProps>
   label: string
+  variant?: "desktop" | "mobile"
 }
 
 export function SidebarLink(props: SidebarLinkProps) {
-  const { icon, label = "", to = "/" } = props
-  const { sidebarDesktopIsCollapsed, sidebarMobileIsOpen, sidebarMobileSetIsOpen } =
-    useSidebarStore()
+  const { icon, label = "", to = "/", variant = "desktop" } = props
+  const { sidebarDesktopIsCollapsed, sidebarMobileSetIsOpen } = useSidebarStore()
 
   const Icon = icon
 
@@ -35,7 +35,9 @@ export function SidebarLink(props: SidebarLinkProps) {
             <Icon size={20} className="mr-8 shrink-0" />
             <span
               className="text-nowrap transition-opacity data-[sidebar-desktop-is-collapsed=true]:opacity-0"
-              data-sidebar-desktop-is-collapsed={sidebarDesktopIsCollapsed}
+              data-sidebar-desktop-is-collapsed={
+                variant === "desktop" ? sidebarDesktopIsCollapsed : false
+              }
             >
               {label}
             </span>
