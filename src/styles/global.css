@@ -4,11 +4,12 @@
 @import "@nattstack/ui/tailwind-tokenless-10";
 @import "@fontsource-variable/inter-tight/wght-italic.css";
 @import "@fontsource-variable/inter/wght.css";
+@import "@fontsource/commit-mono";
 
 @theme {
   --font-\*: initial;
   --font-display: "Inter Tight Variable", sans-serif;
-  --font-mono: monospace;
+  --font-mono: "Commit Mono", monospace;
   --font-sans: "Inter Variable", sans-serif;
 }
 

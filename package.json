@@ -10,6 +10,7 @@
   "dependencies": {
     "@fontsource-variable/inter": "5.2.8",
     "@fontsource-variable/inter-tight": "5.2.7",
+    "@fontsource/commit-mono": "^5.2.5",
     "@nattstack/icons-filled": "npm:@central-icons-react/round-filled-radius-3-stroke-2@1.1.183",
     "@nattstack/icons-outlined": "npm:@central-icons-react/round-outlined-radius-3-stroke-2@1.1.183",
     "@nattstack/ui": "0.0.11",
