@@ -13,7 +13,7 @@
     "@fontsource/commit-mono": "^5.2.5",
     "@nattstack/icons-filled": "npm:@central-icons-react/round-filled-radius-3-stroke-2@1.1.183",
     "@nattstack/icons-outlined": "npm:@central-icons-react/round-outlined-radius-3-stroke-2@1.1.183",
-    "@nattstack/ui": "0.0.18",
+    "@nattstack/ui": "0.0.19",
     "@tailwindcss/vite": "4.2.2",
     "@tanstack/react-router": "1.168.10",
     "@tanstack/react-start": "1.167.16",
