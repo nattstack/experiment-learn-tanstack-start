@@ -29,7 +29,7 @@ export const Route = createFileRoute("/app/search")({
             <Row className="h-36 w-full items-center px-8">
               <IconSearchIntelligence className="shrink-0" size={20} />
               <span
-                className="text-14 mr-8 text-nowrap transition-opacity data-[is-collapsed=true]:opacity-0"
+                className="font-500 text-14 mr-8 text-nowrap transition-opacity data-[is-collapsed=true]:opacity-0"
                 data-is-collapsed={sidebarDesktopIsCollapsed}
               >
                 Deep research
@@ -38,7 +38,7 @@ export const Route = createFileRoute("/app/search")({
             <Row className="h-36 w-full items-center px-8">
               <IconAirplayAudio className="shrink-0" size={20} />
               <span
-                className="text-14 mr-8 text-nowrap transition-opacity data-[is-collapsed=true]:opacity-0"
+                className="font-500 text-14 mr-8 text-nowrap transition-opacity data-[is-collapsed=true]:opacity-0"
                 data-is-collapsed={sidebarDesktopIsCollapsed}
               >
                 Audio
