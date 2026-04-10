@@ -29,10 +29,9 @@ export function Topbar() {
             <TooltipTrigger
               render={
                 <Button
-                  className="text-gray-9! max-768:hidden! hover:text-gray-12! transition-[background-color,color,opacity,translate]!"
+                  className="text-gray-9! max-768:hidden! hover:text-gray-12! -ml-4 transition-[background-color,color,opacity,translate]!"
                   isIconOnly
                   onClick={() => sidebarDesktopSetIsCollapsed(!sidebarDesktopIsCollapsed)}
-                  size={32}
                   variant="ghost"
                 >
                   <IconLayoutAlignLeft />
