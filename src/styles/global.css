@@ -12,11 +12,3 @@
   --font-code: "Commit Mono", monospace;
   --font-heading: "Inter Tight Variable", sans-serif;
 }
-
-a,
-button,
-input,
-label,
-p {
-  letter-spacing: -0.02em;
-}
