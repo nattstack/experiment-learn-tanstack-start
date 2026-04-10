@@ -5,8 +5,7 @@ import { useSidebarStore } from "../components/sidebar-content"
 
 export const Route = createFileRoute("/app/search")({
   component: function RouteAppSearch() {
-    const sidebarDesktopIsCollapsed = useSidebarStore((state) => state.desktopIsCollapsed)
-    const sidebarDesktopSetIsCollapsed = useSidebarStore((state) => state.desktopSetIsCollapsed)
+    const { sidebarDesktopIsCollapsed, sidebarDesktopSetIsCollapsed } = useSidebarStore()
 
     return (
       <>

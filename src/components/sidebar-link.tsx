@@ -11,10 +11,9 @@ interface SidebarLinkProps extends Omit<LinkProps, "children"> {
 
 export function SidebarLink(props: SidebarLinkProps) {
   const { icon, label = "", to = "/" } = props
+  const { sidebarDesktopIsCollapsed } = useSidebarStore()
 
   const Icon = icon
-
-  const sidebarDesktopIsCollapsed = useSidebarStore((state) => state.desktopIsCollapsed)
 
   return (
     <Tooltip isDisabled={!sidebarDesktopIsCollapsed}>

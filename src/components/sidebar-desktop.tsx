@@ -2,7 +2,7 @@ import { Column, Spacer } from "@nattstack/ui"
 import { SidebarContent, useSidebarStore } from "./sidebar-content"
 
 export function SidebarDesktop() {
-  const sidebarDesktopIsCollapsed = useSidebarStore((state) => state.desktopIsCollapsed)
+  const { sidebarDesktopIsCollapsed } = useSidebarStore()
 
   return (
     <>

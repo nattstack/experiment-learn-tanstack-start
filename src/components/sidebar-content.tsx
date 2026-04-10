@@ -31,8 +31,8 @@ export function SidebarContent() {
 
 function SidebarContentSettings() {
   return (
-    <Column className="h-full py-8">
-      <Column className="gap-y-2 overflow-y-auto px-8">
+    <Column className="h-full">
+      <Column className="gap-y-2 overflow-y-auto px-8 py-8">
         <SidebarLink icon={IconArrowLeft} label="Back" to="/app" />
         <SidebarLink icon={IconPeople} label="Account" to="/app/settings" />
         <SidebarLink icon={IconGroup3} label="Groups" to="/app/search" />
@@ -43,8 +43,8 @@ function SidebarContentSettings() {
 
 function SidebarContentDashboard() {
   return (
-    <Column className="h-full py-8">
-      <Column className="gap-y-2 overflow-y-auto px-8">
+    <Column className="h-full">
+      <Column className="gap-y-2 overflow-y-auto px-8 py-8">
         <SidebarLink icon={IconEditBig} label="New chat" to="/app" />
         <SidebarLink icon={IconMagnifyingGlass} label="Search chats" to="/app/search" />
         <SidebarLink icon={IconImages1} label="Images" to="/app/settings" />
@@ -60,11 +60,16 @@ function SidebarContentDashboard() {
 }
 
 interface SidebarStore {
-  desktopIsCollapsed: boolean
-  desktopSetIsCollapsed: (desktopWidthCollapsed: boolean) => void
+  sidebarDesktopIsCollapsed: boolean
+  sidebarDesktopSetIsCollapsed: (desktopWidthCollapsed: boolean) => void
+  sidebarMobileIsOpen: boolean
+  sidebarMobileSetIsOpen: (mobileIsOpen: boolean) => void
 }
 
 export const useSidebarStore = create<SidebarStore>((set) => ({
-  desktopIsCollapsed: false,
-  desktopSetIsCollapsed: (desktopIsCollapsed: boolean) => set({ desktopIsCollapsed }),
+  sidebarDesktopIsCollapsed: false,
+  sidebarDesktopSetIsCollapsed: (sidebarDesktopIsCollapsed: boolean) =>
+    set({ sidebarDesktopIsCollapsed }),
+  sidebarMobileIsOpen: false,
+  sidebarMobileSetIsOpen: (sidebarMobileIsOpen: boolean) => set({ sidebarMobileIsOpen }),
 }))
