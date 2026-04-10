@@ -38,12 +38,10 @@ function SidebarContentSettings(props: SidebarContentProps) {
   const { variant } = props
 
   return (
-    <Column className="h-full">
-      <Column className="gap-y-2 overflow-y-auto px-8 py-8">
-        <SidebarLink icon={IconArrowLeft} label="Back" to="/app" variant={variant} />
-        <SidebarLink icon={IconPeople} label="Account" to="/app/settings" variant={variant} />
-        <SidebarLink icon={IconGroup3} label="Groups" to="/app/search" variant={variant} />
-      </Column>
+    <Column className="gap-y-2 overflow-y-auto px-8 py-8">
+      <SidebarLink icon={IconArrowLeft} label="Back" to="/app" variant={variant} />
+      <SidebarLink icon={IconPeople} label="Account" to="/app/settings" variant={variant} />
+      <SidebarLink icon={IconGroup3} label="Groups" to="/app/search" variant={variant} />
     </Column>
   )
 }
@@ -52,28 +50,21 @@ function SidebarContentDashboard(props: SidebarContentProps) {
   const { variant } = props
 
   return (
-    <Column className="h-full">
-      <Column className="gap-y-2 overflow-y-auto px-8">
-        <SidebarLink icon={IconEditBig} label="New chat" to="/app" variant={variant} />
-        <SidebarLink
-          icon={IconMagnifyingGlass}
-          label="Search chats"
-          to="/app/search"
-          variant={variant}
-        />
-        <SidebarLink icon={IconImages1} label="Images" to="/app/settings" variant={variant} />
-        <SidebarLink icon={IconBooks} label="Library" variant={variant} />
-        <SidebarLink icon={IconApps} label="Apps" variant={variant} />
-        <SidebarLink icon={IconTelescope} label="Deep research" variant={variant} />
-        <SidebarLink icon={IconAppleIntelligenceIcon} label="Codex" variant={variant} />
-        <SidebarLink icon={Icon3dBoxTop} label="GPTs" variant={variant} />
-        <SidebarLink
-          icon={IconSettingsGear2}
-          label="Settings"
-          to="/app/settings"
-          variant={variant}
-        />
-      </Column>
+    <Column className="gap-y-2 overflow-y-auto px-8">
+      <SidebarLink icon={IconEditBig} label="New chat" to="/app" variant={variant} />
+      <SidebarLink
+        icon={IconMagnifyingGlass}
+        label="Search chats"
+        to="/app/search"
+        variant={variant}
+      />
+      <SidebarLink icon={IconImages1} label="Images" to="/app/settings" variant={variant} />
+      <SidebarLink icon={IconBooks} label="Library" variant={variant} />
+      <SidebarLink icon={IconApps} label="Apps" variant={variant} />
+      <SidebarLink icon={IconTelescope} label="Deep research" variant={variant} />
+      <SidebarLink icon={IconAppleIntelligenceIcon} label="Codex" variant={variant} />
+      <SidebarLink icon={Icon3dBoxTop} label="GPTs" variant={variant} />
+      <SidebarLink icon={IconSettingsGear2} label="Settings" to="/app/settings" variant={variant} />
     </Column>
   )
 }
