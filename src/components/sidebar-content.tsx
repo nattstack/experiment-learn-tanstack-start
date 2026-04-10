@@ -13,14 +13,13 @@ import {
   IconTelescope,
 } from "@nattstack/icons-outlined"
 import { Column } from "@nattstack/ui"
-import { useRouterState } from "@tanstack/react-router"
+import { useMatchRoute } from "@tanstack/react-router"
 import { create } from "zustand"
 import { SidebarLink } from "./sidebar-link"
 
 export function SidebarContent() {
-  const isRouteSettings = useRouterState({
-    select: (state) => state.matches.some((match) => match.routeId === "/app/settings"),
-  })
+  const matchRoute = useMatchRoute()
+  const isRouteSettings = Boolean(matchRoute({ to: "/app/settings" }))
 
   if (isRouteSettings) {
     return <SidebarContentSettings />
