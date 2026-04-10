@@ -11,9 +11,14 @@ interface SidebarLinkProps extends Omit<LinkProps, "children"> {
 
 export function SidebarLink(props: SidebarLinkProps) {
   const { icon, label = "", to = "/" } = props
-  const { sidebarDesktopIsCollapsed } = useSidebarStore()
+  const { sidebarDesktopIsCollapsed, sidebarMobileIsOpen, sidebarMobileSetIsOpen } =
+    useSidebarStore()
 
   const Icon = icon
+
+  function onClick() {
+    sidebarMobileSetIsOpen(false)
+  }
 
   return (
     <Tooltip isDisabled={!sidebarDesktopIsCollapsed}>
@@ -24,6 +29,7 @@ export function SidebarLink(props: SidebarLinkProps) {
               exact: true,
             }}
             className="text-14 hover:bg-gray-3 rounded-8 data-[status=active]:bg-gray-4 data-[status=active]:text-gray-12 hover:text-gray-12 font-500 flex h-36 shrink-0 cursor-pointer items-center overflow-hidden px-8 transition-colors select-none"
+            onClick={onClick}
             to={to}
           >
             <Icon size={20} className="mr-8 shrink-0" />

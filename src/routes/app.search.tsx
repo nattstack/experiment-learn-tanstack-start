@@ -11,6 +11,14 @@ export const Route = createFileRoute("/app/search")({
       <>
         <Spacer height={64} />
 
+        <div
+          className="d relative size-64 transition-[display,translate,opacity] transition-discrete duration-1000 data-[is-collapsed=true]:hidden data-[is-collapsed=true]:translate-x-64 data-[is-collapsed=true]:opacity-0 starting:translate-x-64 starting:opacity-0"
+          data-is-collapsed={sidebarDesktopIsCollapsed}
+        >
+          <button className="d hover:bg-gray-3">test</button>
+        </div>
+        <Spacer height={64} />
+
         <p>asdf</p>
         <p>asdf</p>
         <p>asdf</p>

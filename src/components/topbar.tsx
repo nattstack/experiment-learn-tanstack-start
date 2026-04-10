@@ -5,7 +5,8 @@ import { Logo } from "./logo"
 import { useSidebarStore } from "./sidebar-content"
 
 export function Topbar() {
-  const { sidebarDesktopIsCollapsed, sidebarDesktopSetIsCollapsed } = useSidebarStore()
+  const { sidebarDesktopIsCollapsed, sidebarDesktopSetIsCollapsed, sidebarMobileSetIsOpen } =
+    useSidebarStore()
 
   return (
     <>
@@ -46,7 +47,12 @@ export function Topbar() {
         {/* Right */}
         <Row className="items-center">
           {/* Toggle sidebar mobile */}
-          <Button className="max-768:flex! -mr-12 hidden!" isIconOnly variant="ghost">
+          <Button
+            className="max-768:flex! hidden1! -mr-12"
+            isIconOnly
+            onClick={() => sidebarMobileSetIsOpen(true)}
+            variant="ghost"
+          >
             <IconBarsThree />
           </Button>
         </Row>

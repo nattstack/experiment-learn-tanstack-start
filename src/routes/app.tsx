@@ -1,6 +1,7 @@
 import { Column, Row } from "@nattstack/ui"
 import { createFileRoute, Outlet } from "@tanstack/react-router"
 import { SidebarDesktop } from "../components/sidebar-desktop"
+import { SidebarMobile } from "../components/sidebar-mobile"
 import { Topbar } from "../components/topbar"
 
 export const Route = createFileRoute("/app")({
@@ -14,6 +15,7 @@ export const Route = createFileRoute("/app")({
         <Row className="grow">
           {/* Sidebar */}
           <SidebarDesktop />
+          <SidebarMobile />
 
           {/* Main */}
           <Column
