@@ -1,6 +1,10 @@
-import { Column } from "@nattstack/ui"
+import { IconCrossLarge, IconX } from "@nattstack/icons-outlined"
+import { Button, Column, Row } from "@nattstack/ui"
+import { Link } from "@tanstack/react-router"
 import { useEffect } from "react"
 import { createPortal } from "react-dom"
+import { Logo } from "./logo"
+import { LogoLink } from "./logo-link"
 import { SidebarContent, useSidebarStore } from "./sidebar-content"
 
 export function SidebarMobile() {
@@ -23,9 +27,15 @@ export function SidebarMobile() {
 
       <Column
         as="aside"
-        className="bg-bg-primary pointer-events-auto absolute top-0 right-0 hidden! h-full w-full max-w-[320px] translate-x-full transition-[display,translate] transition-discrete duration-[inherit] data-[sidebar-mobile-is-open=true]:flex! data-[sidebar-mobile-is-open=true]:translate-x-0 starting:data-[sidebar-mobile-is-open=true]:translate-x-full"
+        className="bg-bg-primary pointer-events-auto absolute top-0 right-0 hidden! h-full w-full max-w-320 translate-x-full transition-[display,translate] transition-discrete duration-[inherit] data-[sidebar-mobile-is-open=true]:flex! data-[sidebar-mobile-is-open=true]:translate-x-0 starting:data-[sidebar-mobile-is-open=true]:translate-x-full"
         data-sidebar-mobile-is-open={sidebarMobileIsOpen}
       >
+        <Row className="m-8 items-center justify-between">
+          <LogoLink onClick={() => sidebarMobileSetIsOpen(false)} />
+          <Button isIconOnly onClick={() => sidebarMobileSetIsOpen(false)} variant="ghost">
+            <IconCrossLarge />
+          </Button>
+        </Row>
         <SidebarContent variant="mobile" />
       </Column>
     </div>,

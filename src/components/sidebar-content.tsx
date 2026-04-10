@@ -53,7 +53,7 @@ function SidebarContentDashboard(props: SidebarContentProps) {
 
   return (
     <Column className="h-full">
-      <Column className="gap-y-2 overflow-y-auto px-8 py-8">
+      <Column className="gap-y-2 overflow-y-auto px-8">
         <SidebarLink icon={IconEditBig} label="New chat" to="/app" variant={variant} />
         <SidebarLink
           icon={IconMagnifyingGlass}

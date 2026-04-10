@@ -2,6 +2,7 @@ import { IconBarsThree, IconLayoutAlignLeft } from "@nattstack/icons-outlined"
 import { Button, Row, Spacer, Tooltip, TooltipContent, TooltipTrigger } from "@nattstack/ui"
 import { Link } from "@tanstack/react-router"
 import { Logo } from "./logo"
+import { LogoLink } from "./logo-link"
 import { useSidebarStore } from "./sidebar-content"
 
 export function Topbar() {
@@ -12,14 +13,12 @@ export function Topbar() {
     <>
       <Row
         as="header"
-        className="bg-bg-secondary max-768:border-b max-768:border-border fixed top-0 left-0 z-10 h-(--dimension-topbar-height) w-full items-center justify-between px-16"
+        className="bg-bg-secondary max-768:border-b max-768:border-border fixed top-0 left-0 z-10 h-(--dimension-topbar-height) w-full items-center justify-between px-8"
       >
         {/* Left */}
         <Row className="items-center">
           {/* Logo */}
-          <Link to="/app" className="-ml-8 p-8 transition-opacity hover:opacity-75">
-            <Logo />
-          </Link>
+          <LogoLink />
 
           {/* Separator */}
           <div className="bg-border max-768:hidden mx-4 h-24 w-1" />
@@ -48,7 +47,7 @@ export function Topbar() {
         <Row className="items-center">
           {/* Toggle sidebar mobile */}
           <Button
-            className="max-768:flex! hidden1! -mr-12"
+            className="max-768:flex! hidden!"
             isIconOnly
             onClick={() => sidebarMobileSetIsOpen(true)}
             variant="ghost"
