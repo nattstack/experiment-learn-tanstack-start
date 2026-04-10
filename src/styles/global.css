@@ -22,7 +22,7 @@
   }
 
   @media (max-width: 768px) {
-    body {
+    body[data-is-app="true"] {
       background-color: var(--color-bg-primary);
     }
   }
