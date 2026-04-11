@@ -11,7 +11,7 @@ export const Route = createFileRoute("/_unauthenticated/signin")({
     }
 
     return (
-      <Column as="main" className="min-h-dvh items-center justify-center px-16 pt-24 pb-80">
+      <Column as="main" className="min-h-dvh items-center justify-center px-16 pt-24 pb-144">
         <Column className="w-full max-w-[380px]">
           {/* Header */}
           <Row className="-ml-8">

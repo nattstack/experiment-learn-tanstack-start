@@ -1,7 +1,5 @@
 import { IconBarsThree, IconLayoutAlignLeft } from "@nattstack/icons-outlined"
 import { Button, Row, Spacer, Tooltip, TooltipContent, TooltipTrigger } from "@nattstack/ui"
-import { Link } from "@tanstack/react-router"
-import { Logo } from "./logo"
 import { LogoLink } from "./logo-link"
 import { useSidebarStore } from "./sidebar-content"
 
