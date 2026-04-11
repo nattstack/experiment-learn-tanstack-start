@@ -29,7 +29,13 @@ export const Route = createFileRoute("/_unauthenticated/signin")({
             <form className="flex flex-col" onSubmit={onSubmit}>
               <Label htmlFor="email">Email</Label>
               <Spacer height={8} />
-              <Input autoComplete="email" id="email" name="email" type="email" />
+              <Input
+                autoComplete="email"
+                id="email"
+                name="email"
+                placeholder="Email"
+                type="email"
+              />
               <Spacer height={16} />
 
               <Label htmlFor="password">Password</Label>
@@ -38,6 +44,7 @@ export const Route = createFileRoute("/_unauthenticated/signin")({
                 autoComplete="current-password"
                 id="password"
                 name="password"
+                placeholder="Password"
                 type="password"
               />
               <Spacer height={24} />
