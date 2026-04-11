@@ -7,7 +7,7 @@
       "dependencies": {
         "@nattstack/icons-filled": "npm:@central-icons-react/round-filled-radius-3-stroke-2@1.1.184",
         "@nattstack/icons-outlined": "npm:@central-icons-react/round-outlined-radius-3-stroke-2@1.1.184",
-        "@nattstack/ui": "0.0.24",
+        "@nattstack/ui": "0.0.25",
         "@tailwindcss/vite": "4.2.2",
         "@tanstack/react-router": "1.168.15",
         "@tanstack/react-start": "1.167.27",
@@ -156,7 +156,7 @@
 
     "@nattstack/icons-outlined": ["@central-icons-react/round-outlined-radius-3-stroke-2@1.1.184", "", { "peerDependencies": { "react": ">=14.0.0 <= 19" } }, "sha512-F/43l+RD3hitiPMiVljqqDxwCKcJEHLZT6d8iAmOlIev6AwCXqE4oXb2TTfioU/HCDiTNcNVgUC5MR7sjQZMgg=="],
 
-    "@nattstack/ui": ["@nattstack/ui@0.0.24", "", { "dependencies": { "@base-ui/react": "1.3.0" }, "peerDependencies": { "react": "^18.0.0 || ^19.0.0", "react-dom": "^18.0.0 || ^19.0.0" } }, "sha512-q4+XKilCn99rto8EbTlHzUgPL+6SsEd3dDLb3jXIO1XSvbTDLo38m84p3+IbAJhD20WPac2rYoydlxLvsL1rtw=="],
+    "@nattstack/ui": ["@nattstack/ui@0.0.25", "", { "dependencies": { "@base-ui/react": "1.3.0" }, "peerDependencies": { "react": "^18.0.0 || ^19.0.0", "react-dom": "^18.0.0 || ^19.0.0" } }, "sha512-txc0900NI1N/yLjx+cetVDopCWuktQpTJlKrYhho+1BZt4YwK+eMRyIpXkL+6HsIEhcd4S4bOa4Gb8km4o1qFA=="],
 
     "@oozcitak/dom": ["@oozcitak/dom@2.0.2", "", { "dependencies": { "@oozcitak/infra": "^2.0.2", "@oozcitak/url": "^3.0.0", "@oozcitak/util": "^10.0.0" } }, "sha512-GjpKhkSYC3Mj4+lfwEyI1dqnsKTgwGy48ytZEhm4A/xnH/8z9M3ZVXKr/YGQi3uCLs1AEBS+x5T2JPiueEDW8w=="],
 
