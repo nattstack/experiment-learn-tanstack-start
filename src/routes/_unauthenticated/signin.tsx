@@ -21,7 +21,7 @@ export const Route = createFileRoute("/_unauthenticated/signin")({
           <h1 className="text-[28px]">Sign in to your account</h1>
           <Spacer height={4} />
           <p>Welcome back. Enter your credentials to continue.</p>
-          <Spacer height={16} />
+          <Spacer height={24} />
 
           {/* Form */}
           <form onSubmit={onSubmit}>
