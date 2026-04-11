@@ -58,7 +58,7 @@ function SidebarContentDashboard(props: SidebarContentProps) {
         to="/app/search"
         variant={variant}
       />
-      <SidebarLink icon={IconImages1} label="Images" to="/app/settings" variant={variant} />
+      <SidebarLink icon={IconImages1} label="Images" to="/signin" variant={variant} />
       <SidebarLink icon={IconBooks} label="Library" variant={variant} />
       <SidebarLink icon={IconApps} label="Apps" variant={variant} />
       <SidebarLink icon={IconTelescope} label="Deep research" variant={variant} />
