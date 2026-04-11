@@ -1,9 +1,14 @@
 import { Button, Column, Input, Label, Row } from "@nattstack/ui"
 import { Link, createFileRoute } from "@tanstack/react-router"
+import type { SubmitEvent } from "react"
 import { Logo } from "../../components/logo"
 
 export const Route = createFileRoute("/_unauthenticated/signin")({
   component: function RouteSignin() {
+    function onSubmit(event: SubmitEvent<HTMLFormElement>) {
+      event.preventDefault()
+    }
+
     return (
       <main className="bg-gray-1 flex min-h-dvh items-center justify-center px-24 py-48">
         <Column className="w-full max-w-[420px] gap-32">
@@ -20,11 +25,7 @@ export const Route = createFileRoute("/_unauthenticated/signin")({
           </Column>
 
           <Column className="border-gray-4 bg-bg-primary shadow-2 gap-24 rounded-[24px] border p-32">
-            <form
-              onSubmit={(e) => {
-                e.preventDefault()
-              }}
-            >
+            <form onSubmit={onSubmit}>
               <Column className="gap-20">
                 <Column className="gap-8">
                   <Label htmlFor="email">Email</Label>
