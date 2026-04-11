@@ -10,26 +10,19 @@ export const Route = createFileRoute("/app/search")({
     return (
       <>
         <Spacer height={64} />
+        <p>1234567890</p>
+        <p>abcdefghijklmnopqrstuvwxyz</p>
 
-        <div
-          className="d relative size-64 transition-[display,translate,opacity] transition-discrete duration-1000 data-[is-collapsed=true]:hidden data-[is-collapsed=true]:translate-x-64 data-[is-collapsed=true]:opacity-0 starting:translate-x-64 starting:opacity-0"
-          data-is-collapsed={sidebarDesktopIsCollapsed}
-        >
-          <button className="d hover:bg-gray-3">test</button>
-        </div>
         <Spacer height={64} />
-
         <p>asdf</p>
         <p>asdf</p>
         <p>asdf</p>
         <p>asdf</p>
         <Spacer height={32} />
-
         <Button onClick={() => sidebarDesktopSetIsCollapsed(!sidebarDesktopIsCollapsed)}>
           Click me
         </Button>
         <Spacer height={32} />
-
         <div
           className="bg-gray-4 text-gray-12 flex w-240 flex-col items-center justify-start transition-[width] data-[is-collapsed=true]:w-[52px]"
           data-is-collapsed={sidebarDesktopIsCollapsed}
