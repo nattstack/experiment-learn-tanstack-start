@@ -1,9 +1,9 @@
 import { IconAirplayAudio, IconSearchIntelligence } from "@nattstack/icons-outlined"
 import { Button, Column, Row, Spacer } from "@nattstack/ui"
 import { createFileRoute } from "@tanstack/react-router"
-import { useSidebarStore } from "../components/sidebar-content"
+import { useSidebarStore } from "../../../components/sidebar-content"
 
-export const Route = createFileRoute("/app/search")({
+export const Route = createFileRoute("/_application/app/search")({
   component: function RouteAppSearch() {
     const { sidebarDesktopIsCollapsed, sidebarDesktopSetIsCollapsed } = useSidebarStore()
 

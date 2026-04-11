@@ -1,10 +1,10 @@
 import { Column, Row } from "@nattstack/ui"
 import { createFileRoute, Outlet } from "@tanstack/react-router"
-import { SidebarDesktop } from "../components/sidebar-desktop"
-import { SidebarMobile } from "../components/sidebar-mobile"
-import { Topbar } from "../components/topbar"
+import { SidebarDesktop } from "../../components/sidebar-desktop"
+import { SidebarMobile } from "../../components/sidebar-mobile"
+import { Topbar } from "../../components/topbar"
 
-export const Route = createFileRoute("/app")({
+export const Route = createFileRoute("/_application")({
   component: function RouteApp() {
     return (
       <Column className="max-768:[--dimension-topbar-height:64px] min-h-dvh [--dimension-sidebar-desktop-width-collapsed:52px] [--dimension-sidebar-desktop-width-expanded:240px] [--dimension-topbar-height:56px]">

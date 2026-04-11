@@ -9,21 +9,20 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as AppRouteImport } from './routes/app'
-import { Route as ApiRouteImport } from './routes/api'
+import { Route as ApiRouteRouteImport } from './routes/api/route'
+import { Route as ApplicationRouteRouteImport } from './routes/_application/route'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as AppIndexRouteImport } from './routes/app.index'
-import { Route as AppSettingsRouteImport } from './routes/app.settings'
-import { Route as AppSearchRouteImport } from './routes/app.search'
+import { Route as ApplicationAppIndexRouteImport } from './routes/_application/app/index'
+import { Route as ApplicationAppSettingsRouteImport } from './routes/_application/app/settings'
+import { Route as ApplicationAppSearchRouteImport } from './routes/_application/app/search'
 
-const AppRoute = AppRouteImport.update({
-  id: '/app',
-  path: '/app',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ApiRoute = ApiRouteImport.update({
+const ApiRouteRoute = ApiRouteRouteImport.update({
   id: '/api',
   path: '/api',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApplicationRouteRoute = ApplicationRouteRouteImport.update({
+  id: '/_application',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -31,81 +30,80 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AppIndexRoute = AppIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => AppRoute,
+const ApplicationAppIndexRoute = ApplicationAppIndexRouteImport.update({
+  id: '/app/',
+  path: '/app/',
+  getParentRoute: () => ApplicationRouteRoute,
 } as any)
-const AppSettingsRoute = AppSettingsRouteImport.update({
-  id: '/settings',
-  path: '/settings',
-  getParentRoute: () => AppRoute,
+const ApplicationAppSettingsRoute = ApplicationAppSettingsRouteImport.update({
+  id: '/app/settings',
+  path: '/app/settings',
+  getParentRoute: () => ApplicationRouteRoute,
 } as any)
-const AppSearchRoute = AppSearchRouteImport.update({
-  id: '/search',
-  path: '/search',
-  getParentRoute: () => AppRoute,
+const ApplicationAppSearchRoute = ApplicationAppSearchRouteImport.update({
+  id: '/app/search',
+  path: '/app/search',
+  getParentRoute: () => ApplicationRouteRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/api': typeof ApiRoute
-  '/app': typeof AppRouteWithChildren
-  '/app/search': typeof AppSearchRoute
-  '/app/settings': typeof AppSettingsRoute
-  '/app/': typeof AppIndexRoute
+  '/api': typeof ApiRouteRoute
+  '/app/search': typeof ApplicationAppSearchRoute
+  '/app/settings': typeof ApplicationAppSettingsRoute
+  '/app/': typeof ApplicationAppIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/api': typeof ApiRoute
-  '/app/search': typeof AppSearchRoute
-  '/app/settings': typeof AppSettingsRoute
-  '/app': typeof AppIndexRoute
+  '/api': typeof ApiRouteRoute
+  '/app/search': typeof ApplicationAppSearchRoute
+  '/app/settings': typeof ApplicationAppSettingsRoute
+  '/app': typeof ApplicationAppIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/api': typeof ApiRoute
-  '/app': typeof AppRouteWithChildren
-  '/app/search': typeof AppSearchRoute
-  '/app/settings': typeof AppSettingsRoute
-  '/app/': typeof AppIndexRoute
+  '/_application': typeof ApplicationRouteRouteWithChildren
+  '/api': typeof ApiRouteRoute
+  '/_application/app/search': typeof ApplicationAppSearchRoute
+  '/_application/app/settings': typeof ApplicationAppSettingsRoute
+  '/_application/app/': typeof ApplicationAppIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/api' | '/app' | '/app/search' | '/app/settings' | '/app/'
+  fullPaths: '/' | '/api' | '/app/search' | '/app/settings' | '/app/'
   fileRoutesByTo: FileRoutesByTo
   to: '/' | '/api' | '/app/search' | '/app/settings' | '/app'
   id:
     | '__root__'
     | '/'
+    | '/_application'
     | '/api'
-    | '/app'
-    | '/app/search'
-    | '/app/settings'
-    | '/app/'
+    | '/_application/app/search'
+    | '/_application/app/settings'
+    | '/_application/app/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  ApiRoute: typeof ApiRoute
-  AppRoute: typeof AppRouteWithChildren
+  ApplicationRouteRoute: typeof ApplicationRouteRouteWithChildren
+  ApiRouteRoute: typeof ApiRouteRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/app': {
-      id: '/app'
-      path: '/app'
-      fullPath: '/app'
-      preLoaderRoute: typeof AppRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/api': {
       id: '/api'
       path: '/api'
       fullPath: '/api'
-      preLoaderRoute: typeof ApiRouteImport
+      preLoaderRoute: typeof ApiRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_application': {
+      id: '/_application'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof ApplicationRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -115,48 +113,49 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/app/': {
-      id: '/app/'
-      path: '/'
+    '/_application/app/': {
+      id: '/_application/app/'
+      path: '/app'
       fullPath: '/app/'
-      preLoaderRoute: typeof AppIndexRouteImport
-      parentRoute: typeof AppRoute
+      preLoaderRoute: typeof ApplicationAppIndexRouteImport
+      parentRoute: typeof ApplicationRouteRoute
     }
-    '/app/settings': {
-      id: '/app/settings'
-      path: '/settings'
+    '/_application/app/settings': {
+      id: '/_application/app/settings'
+      path: '/app/settings'
       fullPath: '/app/settings'
-      preLoaderRoute: typeof AppSettingsRouteImport
-      parentRoute: typeof AppRoute
+      preLoaderRoute: typeof ApplicationAppSettingsRouteImport
+      parentRoute: typeof ApplicationRouteRoute
     }
-    '/app/search': {
-      id: '/app/search'
-      path: '/search'
+    '/_application/app/search': {
+      id: '/_application/app/search'
+      path: '/app/search'
       fullPath: '/app/search'
-      preLoaderRoute: typeof AppSearchRouteImport
-      parentRoute: typeof AppRoute
+      preLoaderRoute: typeof ApplicationAppSearchRouteImport
+      parentRoute: typeof ApplicationRouteRoute
     }
   }
 }
 
-interface AppRouteChildren {
-  AppSearchRoute: typeof AppSearchRoute
-  AppSettingsRoute: typeof AppSettingsRoute
-  AppIndexRoute: typeof AppIndexRoute
+interface ApplicationRouteRouteChildren {
+  ApplicationAppSearchRoute: typeof ApplicationAppSearchRoute
+  ApplicationAppSettingsRoute: typeof ApplicationAppSettingsRoute
+  ApplicationAppIndexRoute: typeof ApplicationAppIndexRoute
 }
 
-const AppRouteChildren: AppRouteChildren = {
-  AppSearchRoute: AppSearchRoute,
-  AppSettingsRoute: AppSettingsRoute,
-  AppIndexRoute: AppIndexRoute,
+const ApplicationRouteRouteChildren: ApplicationRouteRouteChildren = {
+  ApplicationAppSearchRoute: ApplicationAppSearchRoute,
+  ApplicationAppSettingsRoute: ApplicationAppSettingsRoute,
+  ApplicationAppIndexRoute: ApplicationAppIndexRoute,
 }
 
-const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
+const ApplicationRouteRouteWithChildren =
+  ApplicationRouteRoute._addFileChildren(ApplicationRouteRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  ApiRoute: ApiRoute,
-  AppRoute: AppRouteWithChildren,
+  ApplicationRouteRoute: ApplicationRouteRouteWithChildren,
+  ApiRouteRoute: ApiRouteRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
