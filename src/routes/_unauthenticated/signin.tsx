@@ -69,11 +69,12 @@ export const Route = createFileRoute("/_unauthenticated/signin")({
           </form>
           <Spacer height={24} />
 
-          <p className="text-gray-11 text-14 text-center">
+          {/* Sign up */}
+          <p className="text-14">
             Don't have an account?{" "}
             <Link
+              className="text-primary-9 font-semibold transition-opacity hover:opacity-75"
               to="."
-              className="text-primary-11 font-semibold transition-opacity hover:opacity-75"
             >
               Create one
             </Link>
