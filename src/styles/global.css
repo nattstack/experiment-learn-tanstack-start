@@ -18,10 +18,16 @@
   font-family: body;
   font-style: normal;
   font-weight: 100 900;
-  src: url("../assets/body.woff2") format("woff2");
+  src: url("../assets/fonts/body.woff2") format("woff2");
 }
 
 body {
-  /* ss08: Rounded dots */
-  font-feature-settings: "ss08";
+  /*
+      ss01: No tail a
+      ss03: Alt l
+      ss04: Alt R
+      ss06: Alt G
+      ss08: Rounded dots
+  */
+  font-feature-settings: "ss01", "ss03", "ss04", "ss06", "ss08";
 }
