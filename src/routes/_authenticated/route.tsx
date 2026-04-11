@@ -4,7 +4,7 @@ import { SidebarDesktop } from "../../components/sidebar-desktop"
 import { SidebarMobile } from "../../components/sidebar-mobile"
 import { Topbar } from "../../components/topbar"
 
-export const Route = createFileRoute("/_application")({
+export const Route = createFileRoute("/_authenticated")({
   component: function RouteApp() {
     return (
       <Column className="max-768:[--dimension-topbar-height:64px] min-h-dvh [--dimension-sidebar-desktop-width-collapsed:52px] [--dimension-sidebar-desktop-width-expanded:240px] [--dimension-topbar-height:56px]">

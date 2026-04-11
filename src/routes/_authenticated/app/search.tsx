@@ -3,7 +3,7 @@ import { Button, Column, Row, Spacer } from "@nattstack/ui"
 import { createFileRoute } from "@tanstack/react-router"
 import { useSidebarStore } from "../../../components/sidebar-content"
 
-export const Route = createFileRoute("/_application/app/search")({
+export const Route = createFileRoute("/_authenticated/app/search")({
   component: function RouteAppSearch() {
     const { sidebarDesktopIsCollapsed, sidebarDesktopSetIsCollapsed } = useSidebarStore()
 

@@ -1,7 +1,7 @@
 import { Spacer } from "@nattstack/ui"
 import { createFileRoute } from "@tanstack/react-router"
 
-export const Route = createFileRoute("/_application/app/")({
+export const Route = createFileRoute("/_authenticated/app/")({
   component: function RouteAppIndex() {
     return (
       <>
