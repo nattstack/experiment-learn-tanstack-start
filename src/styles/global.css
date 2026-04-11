@@ -2,15 +2,20 @@
 @import "@nattstack/ui/tailwind-colors";
 @import "@nattstack/ui/tailwind-tokenless-10";
 @import "@nattstack/ui/baseline";
-@import "@fontsource-variable/inter-tight/wght.css";
-@import "@fontsource-variable/inter/wght.css";
-@import "@fontsource/commit-mono";
 
 @theme {
   --font-\*: initial;
   --font-body: body, sans-serif;
-  --font-code: "Commit Mono", monospace;
-  --font-heading: "Inter Tight Variable", sans-serif;
+  --font-code: code, monospace;
+  --font-heading: heading, sans-serif;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: code;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/code.woff2") format("woff2");
 }
 
 @font-face {
@@ -19,6 +24,14 @@
   font-style: normal;
   font-weight: 100 900;
   src: url("../assets/fonts/body.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: heading;
+  font-style: normal;
+  font-weight: 100 900;
+  src: url("../assets/fonts/heading.woff2") format("woff2");
 }
 
 body {
@@ -30,4 +43,14 @@ body {
       ss08: Rounded dots
   */
   font-feature-settings: "ss01", "ss03", "ss04", "ss06", "ss08";
+}
+
+code,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-feature-settings: normal;
 }

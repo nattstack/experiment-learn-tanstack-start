@@ -13,6 +13,10 @@ export const Route = createFileRoute("/app/search")({
         <p>1234567890</p>
         <p>abcdefghijklmnopqrstuvwxyz</p>
 
+        <h1 className="text-24">Good life starts with a good morning</h1>
+
+        <code>j console.log("Hello World")</code>
+
         <Spacer height={64} />
         <p>asdf</p>
         <p>asdf</p>
