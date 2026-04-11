@@ -10,7 +10,7 @@
   "dependencies": {
     "@nattstack/icons-filled": "npm:@central-icons-react/round-filled-radius-3-stroke-2@1.1.184",
     "@nattstack/icons-outlined": "npm:@central-icons-react/round-outlined-radius-3-stroke-2@1.1.184",
-    "@nattstack/ui": "0.0.25",
+    "@nattstack/ui": "0.0.26",
     "@tailwindcss/vite": "4.2.2",
     "@tanstack/react-router": "1.168.15",
     "@tanstack/react-start": "1.167.27",
