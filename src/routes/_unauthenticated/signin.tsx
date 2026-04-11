@@ -1,4 +1,4 @@
-import { Button, Column, Input, Label, Row } from "@nattstack/ui"
+import { Button, Column, Input, Label, Row, Spacer } from "@nattstack/ui"
 import { Link, createFileRoute } from "@tanstack/react-router"
 import type { SubmitEvent } from "react"
 import { Logo } from "../../components/logo"
@@ -25,44 +25,32 @@ export const Route = createFileRoute("/_unauthenticated/signin")({
           </Column>
 
           <Column className="border-gray-4 bg-bg-primary shadow-2 gap-24 rounded-[24px] border p-32">
-            <form onSubmit={onSubmit}>
-              <Column className="gap-20">
-                <Column className="gap-8">
-                  <Label htmlFor="email">Email</Label>
-                  <Input
-                    autoComplete="email"
-                    id="email"
-                    name="email"
-                    placeholder="you@example.com"
-                    size={44}
-                    type="email"
-                  />
-                </Column>
+            <form className="flex flex-col" onSubmit={onSubmit}>
+              <Label htmlFor="email">Email</Label>
+              <Spacer height={8} />
+              <Input
+                autoComplete="email"
+                id="email"
+                name="email"
+                placeholder="you@example.com"
+                type="email"
+              />
+              <Spacer height={16} />
 
-                <Column className="gap-8">
-                  <Row className="items-center justify-between">
-                    <Label htmlFor="password">Password</Label>
-                    <Link
-                      to="."
-                      className="text-primary-11 text-12 font-semibold transition-opacity hover:opacity-75"
-                    >
-                      Forgot password?
-                    </Link>
-                  </Row>
-                  <Input
-                    autoComplete="current-password"
-                    id="password"
-                    name="password"
-                    placeholder="Enter your password"
-                    size={44}
-                    type="password"
-                  />
-                </Column>
+              <Label htmlFor="password">Password</Label>
+              <Spacer height={8} />
+              <Input
+                autoComplete="current-password"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                type="password"
+              />
+              <Spacer height={16} />
 
-                <Button isFullWidth size={44} type="submit" variant="primary">
-                  Sign in
-                </Button>
-              </Column>
+              <Button isFullWidth size={44} type="submit" variant="primary">
+                Sign in
+              </Button>
             </form>
           </Column>
 

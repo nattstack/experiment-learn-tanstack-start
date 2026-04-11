@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as ApiRouteRouteImport } from './routes/api/route'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ApiSigninRouteImport } from './routes/api/signin'
 import { Route as UnauthenticatedSigninRouteImport } from './routes/_unauthenticated/signin'
 import { Route as AuthenticatedAppIndexRouteImport } from './routes/_authenticated/app/index'
 import { Route as AuthenticatedAppSettingsRouteImport } from './routes/_authenticated/app/settings'
@@ -30,6 +31,11 @@ const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
+} as any)
+const ApiSigninRoute = ApiSigninRouteImport.update({
+  id: '/signin',
+  path: '/signin',
+  getParentRoute: () => ApiRouteRoute,
 } as any)
 const UnauthenticatedSigninRoute = UnauthenticatedSigninRouteImport.update({
   id: '/_unauthenticated/signin',
@@ -55,16 +61,18 @@ const AuthenticatedAppSearchRoute = AuthenticatedAppSearchRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/api': typeof ApiRouteRoute
+  '/api': typeof ApiRouteRouteWithChildren
   '/signin': typeof UnauthenticatedSigninRoute
+  '/api/signin': typeof ApiSigninRoute
   '/app/search': typeof AuthenticatedAppSearchRoute
   '/app/settings': typeof AuthenticatedAppSettingsRoute
   '/app/': typeof AuthenticatedAppIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/api': typeof ApiRouteRoute
+  '/api': typeof ApiRouteRouteWithChildren
   '/signin': typeof UnauthenticatedSigninRoute
+  '/api/signin': typeof ApiSigninRoute
   '/app/search': typeof AuthenticatedAppSearchRoute
   '/app/settings': typeof AuthenticatedAppSettingsRoute
   '/app': typeof AuthenticatedAppIndexRoute
@@ -73,8 +81,9 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
-  '/api': typeof ApiRouteRoute
+  '/api': typeof ApiRouteRouteWithChildren
   '/_unauthenticated/signin': typeof UnauthenticatedSigninRoute
+  '/api/signin': typeof ApiSigninRoute
   '/_authenticated/app/search': typeof AuthenticatedAppSearchRoute
   '/_authenticated/app/settings': typeof AuthenticatedAppSettingsRoute
   '/_authenticated/app/': typeof AuthenticatedAppIndexRoute
@@ -85,17 +94,26 @@ export interface FileRouteTypes {
     | '/'
     | '/api'
     | '/signin'
+    | '/api/signin'
     | '/app/search'
     | '/app/settings'
     | '/app/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/api' | '/signin' | '/app/search' | '/app/settings' | '/app'
+  to:
+    | '/'
+    | '/api'
+    | '/signin'
+    | '/api/signin'
+    | '/app/search'
+    | '/app/settings'
+    | '/app'
   id:
     | '__root__'
     | '/'
     | '/_authenticated'
     | '/api'
     | '/_unauthenticated/signin'
+    | '/api/signin'
     | '/_authenticated/app/search'
     | '/_authenticated/app/settings'
     | '/_authenticated/app/'
@@ -104,7 +122,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
-  ApiRouteRoute: typeof ApiRouteRoute
+  ApiRouteRoute: typeof ApiRouteRouteWithChildren
   UnauthenticatedSigninRoute: typeof UnauthenticatedSigninRoute
 }
 
@@ -130,6 +148,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/api/signin': {
+      id: '/api/signin'
+      path: '/signin'
+      fullPath: '/api/signin'
+      preLoaderRoute: typeof ApiSigninRouteImport
+      parentRoute: typeof ApiRouteRoute
     }
     '/_unauthenticated/signin': {
       id: '/_unauthenticated/signin'
@@ -177,10 +202,22 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
 const AuthenticatedRouteRouteWithChildren =
   AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
 
+interface ApiRouteRouteChildren {
+  ApiSigninRoute: typeof ApiSigninRoute
+}
+
+const ApiRouteRouteChildren: ApiRouteRouteChildren = {
+  ApiSigninRoute: ApiSigninRoute,
+}
+
+const ApiRouteRouteWithChildren = ApiRouteRoute._addFileChildren(
+  ApiRouteRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
-  ApiRouteRoute: ApiRouteRoute,
+  ApiRouteRoute: ApiRouteRouteWithChildren,
   UnauthenticatedSigninRoute: UnauthenticatedSigninRoute,
 }
 export const routeTree = rootRouteImport
