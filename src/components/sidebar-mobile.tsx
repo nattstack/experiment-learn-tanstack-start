@@ -17,7 +17,7 @@ export function SidebarMobile() {
   }, [])
 
   return createPortal(
-    <div className="pointer-events-none fixed inset-0 z-10 duration-300">
+    <div className="max-768:block pointer-events-none fixed inset-0 z-10 hidden duration-300">
       {/* Backdrop */}
       <button
         className="bg-gray-12/50 pointer-events-auto absolute inset-0 hidden opacity-0 transition-[display,opacity] transition-discrete duration-[inherit] data-[sidebar-mobile-is-open=true]:block data-[sidebar-mobile-is-open=true]:opacity-100 starting:data-[sidebar-mobile-is-open=true]:opacity-0"

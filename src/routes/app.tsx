@@ -7,7 +7,7 @@ import { Topbar } from "../components/topbar"
 export const Route = createFileRoute("/app")({
   component: function RouteApp() {
     return (
-      <Column className="min-h-dvh [--dimension-sidebar-desktop-width-collapsed:52px] [--dimension-sidebar-desktop-width-expanded:240px] [--dimension-topbar-height:56px]">
+      <Column className="max-768:[--dimension-topbar-height:64px] min-h-dvh [--dimension-sidebar-desktop-width-collapsed:52px] [--dimension-sidebar-desktop-width-expanded:240px] [--dimension-topbar-height:56px]">
         {/* Topbar */}
         <Topbar />
 
