@@ -8,8 +8,8 @@ import { SidebarContent, useSidebarStore } from "./sidebar-content"
 export function SidebarMobile() {
   const { sidebarMobileIsOpen, sidebarMobileSetIsOpen } = useSidebarStore()
 
-  useEffect(() => {
-    return () => {
+  useEffect(function onSidebarMobileEffect() {
+    return function onSidebarMobileUnmount() {
       sidebarMobileSetIsOpen(false)
     }
   }, [])

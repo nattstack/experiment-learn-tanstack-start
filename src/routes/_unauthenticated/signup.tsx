@@ -1,11 +1,11 @@
-import { IconEmail1, IconLock } from "@nattstack/icons-outlined"
+import { IconEmail1, IconLock, IconPeople } from "@nattstack/icons-outlined"
 import { Button, Column, Input, Label, Row, Spacer } from "@nattstack/ui"
 import { Link, createFileRoute } from "@tanstack/react-router"
 import type { SubmitEvent } from "react"
 import { LogoLink } from "../../components/logo-link"
 
-export const Route = createFileRoute("/_unauthenticated/signin")({
-  component: function RouteSignin() {
+export const Route = createFileRoute("/_unauthenticated/signup")({
+  component: function RouteSignup() {
     function onSubmit(event: SubmitEvent<HTMLFormElement>) {
       event.preventDefault()
     }
@@ -18,12 +18,30 @@ export const Route = createFileRoute("/_unauthenticated/signin")({
             <LogoLink />
           </Row>
           <Spacer height={16} />
-          <h1 className="text-24">Sign in to your account</h1>
+          <h1 className="text-24">Create your account</h1>
           <Spacer height={24} />
 
           {/* Form */}
           <form onSubmit={onSubmit}>
             <Column>
+              {/* Name */}
+              <Label htmlFor="name">Name</Label>
+              <Spacer height={4} />
+              <Row className="relative">
+                <IconPeople
+                  className="text-gray-6 absolute top-1/2 left-16 -translate-y-1/2"
+                  size={20}
+                />
+                <Input
+                  autoComplete="name"
+                  className="pl-48!"
+                  id="name"
+                  name="name"
+                  placeholder="Name"
+                />
+              </Row>
+              <Spacer height={16} />
+
               {/* Email */}
               <Label htmlFor="email">Email</Label>
               <Spacer height={4} />
@@ -52,7 +70,7 @@ export const Route = createFileRoute("/_unauthenticated/signin")({
                   size={20}
                 />
                 <Input
-                  autoComplete="current-password"
+                  autoComplete="new-password"
                   className="pl-48!"
                   id="password"
                   name="password"
@@ -63,7 +81,7 @@ export const Route = createFileRoute("/_unauthenticated/signin")({
               <Spacer height={24} />
 
               <Button isFullWidth size={48} type="submit">
-                Sign in
+                Sign up
               </Button>
             </Column>
           </form>
@@ -71,12 +89,12 @@ export const Route = createFileRoute("/_unauthenticated/signin")({
 
           {/* Sign up */}
           <p className="text-14">
-            Don't have an account?{" "}
+            Already have an account?{" "}
             <Link
               className="text-primary font-500 transition-opacity hover:opacity-75"
-              to="/signup"
+              to="/signin"
             >
-              Sign up
+              Sign in
             </Link>
           </p>
         </Column>

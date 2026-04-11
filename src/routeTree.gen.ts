@@ -13,6 +13,7 @@ import { Route as ApiRouteRouteImport } from './routes/api/route'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ApiSigninRouteImport } from './routes/api/signin'
+import { Route as UnauthenticatedSignupRouteImport } from './routes/_unauthenticated/signup'
 import { Route as UnauthenticatedSigninRouteImport } from './routes/_unauthenticated/signin'
 import { Route as AuthenticatedAppIndexRouteImport } from './routes/_authenticated/app/index'
 import { Route as AuthenticatedAppSettingsRouteImport } from './routes/_authenticated/app/settings'
@@ -36,6 +37,11 @@ const ApiSigninRoute = ApiSigninRouteImport.update({
   id: '/signin',
   path: '/signin',
   getParentRoute: () => ApiRouteRoute,
+} as any)
+const UnauthenticatedSignupRoute = UnauthenticatedSignupRouteImport.update({
+  id: '/_unauthenticated/signup',
+  path: '/signup',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const UnauthenticatedSigninRoute = UnauthenticatedSigninRouteImport.update({
   id: '/_unauthenticated/signin',
@@ -63,6 +69,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/api': typeof ApiRouteRouteWithChildren
   '/signin': typeof UnauthenticatedSigninRoute
+  '/signup': typeof UnauthenticatedSignupRoute
   '/api/signin': typeof ApiSigninRoute
   '/app/search': typeof AuthenticatedAppSearchRoute
   '/app/settings': typeof AuthenticatedAppSettingsRoute
@@ -72,6 +79,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/api': typeof ApiRouteRouteWithChildren
   '/signin': typeof UnauthenticatedSigninRoute
+  '/signup': typeof UnauthenticatedSignupRoute
   '/api/signin': typeof ApiSigninRoute
   '/app/search': typeof AuthenticatedAppSearchRoute
   '/app/settings': typeof AuthenticatedAppSettingsRoute
@@ -83,6 +91,7 @@ export interface FileRoutesById {
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/api': typeof ApiRouteRouteWithChildren
   '/_unauthenticated/signin': typeof UnauthenticatedSigninRoute
+  '/_unauthenticated/signup': typeof UnauthenticatedSignupRoute
   '/api/signin': typeof ApiSigninRoute
   '/_authenticated/app/search': typeof AuthenticatedAppSearchRoute
   '/_authenticated/app/settings': typeof AuthenticatedAppSettingsRoute
@@ -94,6 +103,7 @@ export interface FileRouteTypes {
     | '/'
     | '/api'
     | '/signin'
+    | '/signup'
     | '/api/signin'
     | '/app/search'
     | '/app/settings'
@@ -103,6 +113,7 @@ export interface FileRouteTypes {
     | '/'
     | '/api'
     | '/signin'
+    | '/signup'
     | '/api/signin'
     | '/app/search'
     | '/app/settings'
@@ -113,6 +124,7 @@ export interface FileRouteTypes {
     | '/_authenticated'
     | '/api'
     | '/_unauthenticated/signin'
+    | '/_unauthenticated/signup'
     | '/api/signin'
     | '/_authenticated/app/search'
     | '/_authenticated/app/settings'
@@ -124,6 +136,7 @@ export interface RootRouteChildren {
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   ApiRouteRoute: typeof ApiRouteRouteWithChildren
   UnauthenticatedSigninRoute: typeof UnauthenticatedSigninRoute
+  UnauthenticatedSignupRoute: typeof UnauthenticatedSignupRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -155,6 +168,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/api/signin'
       preLoaderRoute: typeof ApiSigninRouteImport
       parentRoute: typeof ApiRouteRoute
+    }
+    '/_unauthenticated/signup': {
+      id: '/_unauthenticated/signup'
+      path: '/signup'
+      fullPath: '/signup'
+      preLoaderRoute: typeof UnauthenticatedSignupRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/_unauthenticated/signin': {
       id: '/_unauthenticated/signin'
@@ -219,6 +239,7 @@ const rootRouteChildren: RootRouteChildren = {
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   ApiRouteRoute: ApiRouteRouteWithChildren,
   UnauthenticatedSigninRoute: UnauthenticatedSigninRoute,
+  UnauthenticatedSignupRoute: UnauthenticatedSignupRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
