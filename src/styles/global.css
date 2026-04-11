@@ -22,5 +22,6 @@
 }
 
 body {
-  /* font-feature-settings: "ss01", "ss03"; */
+  /* ss08: Rounded dots */
+  font-feature-settings: "ss08";
 }
