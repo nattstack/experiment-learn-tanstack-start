@@ -11,12 +11,17 @@ export const Route = createFileRoute("/_authenticated/app/search")({
       <>
         <Spacer height={64} />
         <p>1234567890</p>
+        <Spacer height={16} />
         <p>abcdefghijklmnopqrstuvwxyz</p>
+        <Spacer height={16} />
 
         <h1 className="text-24">Good life starts with a good morning</h1>
+        <Spacer height={16} />
         <h1 className="text-24">console.log,("Hello World")</h1>
+        <Spacer height={16} />
 
-        <code>j console.log("Hello World")</code>
+        <code className="text-14">j console.log("Hello World")</code>
+        <Spacer height={16} />
 
         <p className="text-12">abcdefghijklmnopqrstuvwxyz</p>
 
