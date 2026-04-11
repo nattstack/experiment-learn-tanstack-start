@@ -27,6 +27,11 @@
 }
 
 body {
+  /*
+      cv01: Alternate one
+      cv05: Lower-case L with tail
+  */
+  font-feature-settings: "cv01", "cv05";
   letter-spacing: -2%;
 }
 

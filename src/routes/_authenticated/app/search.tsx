@@ -10,12 +10,18 @@ export const Route = createFileRoute("/_authenticated/app/search")({
     return (
       <>
         <Spacer height={64} />
+
+        <p>ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+        <p>abcdefghijklmnopqrstuvwxyz</p>
         <p>1234567890</p>
         <Spacer height={16} />
-        <p>abcdefghijklmnopqrstuvwxyz</p>
+
+        <p>Umbrella</p>
         <Spacer height={16} />
 
         <h1 className="text-24">Good life starts with a good morning</h1>
+        <Spacer height={16} />
+        <h1 className="text-24">Umbrella</h1>
         <Spacer height={16} />
         <h1 className="text-24">console.log,("Hello World")</h1>
         <Spacer height={16} />
