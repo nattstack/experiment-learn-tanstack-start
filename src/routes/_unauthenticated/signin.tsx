@@ -70,7 +70,7 @@ export const Route = createFileRoute("/_unauthenticated/signin")({
           <Spacer height={24} />
 
           <p className="text-gray-11 text-14 text-center">
-            Don&apos;t have an account?{" "}
+            Don't have an account?{" "}
             <Link
               to="."
               className="text-primary-11 font-semibold transition-opacity hover:opacity-75"
