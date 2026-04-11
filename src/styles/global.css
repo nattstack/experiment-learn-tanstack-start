@@ -26,6 +26,10 @@
   src: url("../assets/fonts/code.woff2") format("woff2");
 }
 
+body {
+  letter-spacing: -2%;
+}
+
 h1,
 h2,
 h3,
@@ -33,5 +37,4 @@ h4,
 h5,
 h6 {
   font-variation-settings: "opsz" 32;
-  letter-spacing: -2%;
 }
