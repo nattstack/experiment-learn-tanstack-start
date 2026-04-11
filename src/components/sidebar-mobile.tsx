@@ -1,9 +1,7 @@
-import { IconCrossLarge, IconX } from "@nattstack/icons-outlined"
+import { IconCrossLarge } from "@nattstack/icons-outlined"
 import { Button, Column, Row } from "@nattstack/ui"
-import { Link } from "@tanstack/react-router"
 import { useEffect } from "react"
 import { createPortal } from "react-dom"
-import { Logo } from "./logo"
 import { LogoLink } from "./logo-link"
 import { SidebarContent, useSidebarStore } from "./sidebar-content"
 
@@ -15,6 +13,10 @@ export function SidebarMobile() {
       sidebarMobileSetIsOpen(false)
     }
   }, [])
+
+  if (typeof document === "undefined") {
+    return <></>
+  }
 
   return createPortal(
     <div className="max-768:block pointer-events-none fixed inset-0 z-10 hidden duration-300">
