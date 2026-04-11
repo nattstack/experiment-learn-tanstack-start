@@ -1,8 +1,5 @@
 Commit mono 143
 https://commitmono.com
 
-Geist 1.8
-https://vercel.com/font
-
-Google
-https://fonts.google.com/specimen/Google+Sans
+Inter 4.1
+https://rsms.me/inter

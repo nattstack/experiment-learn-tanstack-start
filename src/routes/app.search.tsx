@@ -14,8 +14,11 @@ export const Route = createFileRoute("/app/search")({
         <p>abcdefghijklmnopqrstuvwxyz</p>
 
         <h1 className="text-24">Good life starts with a good morning</h1>
+        <h1 className="text-24">console.log,("Hello World")</h1>
 
         <code>j console.log("Hello World")</code>
+
+        <p className="text-12">abcdefghijklmnopqrstuvwxyz</p>
 
         <Spacer height={64} />
         <p>asdf</p>
