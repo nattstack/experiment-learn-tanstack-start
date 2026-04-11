@@ -9,7 +9,7 @@ export function LogoLink(props: LogoLinkProps) {
   const { ...rest } = props
 
   return (
-    <Link className="w-fit p-8 transition-opacity hover:opacity-75" to="/app" {...rest}>
+    <Link className="rounded-12 w-fit p-8 transition-opacity hover:opacity-75" to="/app" {...rest}>
       <Logo />
     </Link>
   )

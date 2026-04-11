@@ -14,7 +14,7 @@ export const Route = createFileRoute("/_unauthenticated/signin")({
       <Column as="main" className="min-h-dvh items-center justify-center px-16 pt-24 pb-144">
         <Column className="w-full max-w-[380px]">
           {/* Header */}
-          <Row className="-ml-8">
+          <Row className="-mt-8 -ml-8">
             <LogoLink />
           </Row>
           <Spacer height={24} />
