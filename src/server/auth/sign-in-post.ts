@@ -1,12 +1,13 @@
 import { createServerFn } from "@tanstack/react-start"
+import { z } from "zod"
 
-interface SignInPostInput {
-  email: string
-  password: string
-}
+const SignInPostInputSchema = z.object({
+  email: z.email(),
+  password: z.string().min(8).max(100),
+})
 
 export const signInPost = createServerFn({ method: "POST" })
-  .inputValidator((data: SignInPostInput) => data)
+  .inputValidator(SignInPostInputSchema)
   .handler(async (context) => {
     const { data } = context
     const { email, password } = data

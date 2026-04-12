@@ -20,14 +20,17 @@ export const Route = createFileRoute("/_unauthenticated/signin")({
       console.log("email:", email)
       console.log("password:", password)
 
-      const data = await signIn({
-        data: {
-          email,
-          password,
-        },
-      })
-
-      console.log("data:", data)
+      try {
+        const data = await signIn({
+          data: {
+            email,
+            password,
+          },
+        })
+        console.log("data:", data)
+      } catch (error) {
+        console.error("error:", error)
+      }
     }
 
     return (
