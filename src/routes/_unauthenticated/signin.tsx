@@ -1,13 +1,33 @@
 import { IconEmail1, IconLock } from "@nattstack/icons-outlined"
 import { Button, Column, Input, Label, Row, Spacer } from "@nattstack/ui"
 import { Link, createFileRoute } from "@tanstack/react-router"
+import { useServerFn } from "@tanstack/react-start"
 import type { SubmitEvent } from "react"
 import { LogoLink } from "../../components/logo-link"
+import { signInPost } from "../../server/auth/sign-in-post"
 
 export const Route = createFileRoute("/_unauthenticated/signin")({
   component: function RouteSignin() {
-    function onSubmit(event: SubmitEvent<HTMLFormElement>) {
+    const signIn = useServerFn(signInPost)
+
+    async function onSubmit(event: SubmitEvent<HTMLFormElement>) {
       event.preventDefault()
+
+      const formData = new FormData(event.currentTarget)
+      const email = formData.get("email") as string
+      const password = formData.get("password") as string
+
+      console.log("email:", email)
+      console.log("password:", password)
+
+      const data = await signIn({
+        data: {
+          email,
+          password,
+        },
+      })
+
+      console.log("data:", data)
     }
 
     return (
@@ -38,7 +58,7 @@ export const Route = createFileRoute("/_unauthenticated/signin")({
                   id="email"
                   name="email"
                   placeholder="Email"
-                  type="email"
+                  // type="email"
                 />
               </Row>
               <Spacer height={16} />

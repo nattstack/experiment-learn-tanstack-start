@@ -9,21 +9,14 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ApiRouteRouteImport } from './routes/api/route'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ApiSigninRouteImport } from './routes/api/signin'
 import { Route as UnauthenticatedSignupRouteImport } from './routes/_unauthenticated/signup'
 import { Route as UnauthenticatedSigninRouteImport } from './routes/_unauthenticated/signin'
 import { Route as AuthenticatedAppIndexRouteImport } from './routes/_authenticated/app/index'
 import { Route as AuthenticatedAppSettingsRouteImport } from './routes/_authenticated/app/settings'
 import { Route as AuthenticatedAppSearchRouteImport } from './routes/_authenticated/app/search'
 
-const ApiRouteRoute = ApiRouteRouteImport.update({
-  id: '/api',
-  path: '/api',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
   id: '/_authenticated',
   getParentRoute: () => rootRouteImport,
@@ -32,11 +25,6 @@ const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
-} as any)
-const ApiSigninRoute = ApiSigninRouteImport.update({
-  id: '/signin',
-  path: '/signin',
-  getParentRoute: () => ApiRouteRoute,
 } as any)
 const UnauthenticatedSignupRoute = UnauthenticatedSignupRouteImport.update({
   id: '/_unauthenticated/signup',
@@ -67,20 +55,16 @@ const AuthenticatedAppSearchRoute = AuthenticatedAppSearchRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/api': typeof ApiRouteRouteWithChildren
   '/signin': typeof UnauthenticatedSigninRoute
   '/signup': typeof UnauthenticatedSignupRoute
-  '/api/signin': typeof ApiSigninRoute
   '/app/search': typeof AuthenticatedAppSearchRoute
   '/app/settings': typeof AuthenticatedAppSettingsRoute
   '/app/': typeof AuthenticatedAppIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/api': typeof ApiRouteRouteWithChildren
   '/signin': typeof UnauthenticatedSigninRoute
   '/signup': typeof UnauthenticatedSignupRoute
-  '/api/signin': typeof ApiSigninRoute
   '/app/search': typeof AuthenticatedAppSearchRoute
   '/app/settings': typeof AuthenticatedAppSettingsRoute
   '/app': typeof AuthenticatedAppIndexRoute
@@ -89,10 +73,8 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
-  '/api': typeof ApiRouteRouteWithChildren
   '/_unauthenticated/signin': typeof UnauthenticatedSigninRoute
   '/_unauthenticated/signup': typeof UnauthenticatedSignupRoute
-  '/api/signin': typeof ApiSigninRoute
   '/_authenticated/app/search': typeof AuthenticatedAppSearchRoute
   '/_authenticated/app/settings': typeof AuthenticatedAppSettingsRoute
   '/_authenticated/app/': typeof AuthenticatedAppIndexRoute
@@ -101,31 +83,19 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/api'
     | '/signin'
     | '/signup'
-    | '/api/signin'
     | '/app/search'
     | '/app/settings'
     | '/app/'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/api'
-    | '/signin'
-    | '/signup'
-    | '/api/signin'
-    | '/app/search'
-    | '/app/settings'
-    | '/app'
+  to: '/' | '/signin' | '/signup' | '/app/search' | '/app/settings' | '/app'
   id:
     | '__root__'
     | '/'
     | '/_authenticated'
-    | '/api'
     | '/_unauthenticated/signin'
     | '/_unauthenticated/signup'
-    | '/api/signin'
     | '/_authenticated/app/search'
     | '/_authenticated/app/settings'
     | '/_authenticated/app/'
@@ -134,20 +104,12 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
-  ApiRouteRoute: typeof ApiRouteRouteWithChildren
   UnauthenticatedSigninRoute: typeof UnauthenticatedSigninRoute
   UnauthenticatedSignupRoute: typeof UnauthenticatedSignupRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/api': {
-      id: '/api'
-      path: '/api'
-      fullPath: '/api'
-      preLoaderRoute: typeof ApiRouteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/_authenticated': {
       id: '/_authenticated'
       path: ''
@@ -161,13 +123,6 @@ declare module '@tanstack/react-router' {
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
-    }
-    '/api/signin': {
-      id: '/api/signin'
-      path: '/signin'
-      fullPath: '/api/signin'
-      preLoaderRoute: typeof ApiSigninRouteImport
-      parentRoute: typeof ApiRouteRoute
     }
     '/_unauthenticated/signup': {
       id: '/_unauthenticated/signup'
@@ -222,22 +177,9 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
 const AuthenticatedRouteRouteWithChildren =
   AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
 
-interface ApiRouteRouteChildren {
-  ApiSigninRoute: typeof ApiSigninRoute
-}
-
-const ApiRouteRouteChildren: ApiRouteRouteChildren = {
-  ApiSigninRoute: ApiSigninRoute,
-}
-
-const ApiRouteRouteWithChildren = ApiRouteRoute._addFileChildren(
-  ApiRouteRouteChildren,
-)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
-  ApiRouteRoute: ApiRouteRouteWithChildren,
   UnauthenticatedSigninRoute: UnauthenticatedSigninRoute,
   UnauthenticatedSignupRoute: UnauthenticatedSignupRoute,
 }
