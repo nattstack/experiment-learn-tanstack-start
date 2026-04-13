@@ -18,6 +18,7 @@ export function SidebarMobile() {
     }
   }, [])
 
+  // Prevent hydration errors
   if (!isMounted) {
     return <></>
   }
