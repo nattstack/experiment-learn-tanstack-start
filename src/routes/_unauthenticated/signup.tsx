@@ -80,7 +80,7 @@ export const Route = createFileRoute("/_unauthenticated/signup")({
               </Row>
               <Spacer height={24} />
 
-              <Button isFullWidth size={48} type="submit">
+              <Button isFullWidth size={48} type="submit" variant="accent">
                 Sign up
               </Button>
             </Column>
