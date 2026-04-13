@@ -12,7 +12,7 @@ import {
   IconSettingsGear2,
   IconTelescope,
 } from "@nattstack/icons-outlined"
-import { Column } from "@nattstack/ui"
+import { Column, Spacer } from "@nattstack/ui"
 import { useMatchRoute } from "@tanstack/react-router"
 import { SidebarLink, type SidebarLinkProps } from "./sidebar-link"
 
@@ -43,6 +43,7 @@ function SidebarLinksSettings(props: SidebarLinksProps) {
   return (
     <>
       <SidebarLink icon={IconArrowLeft} label="Back" to="/app" variant={variant} />
+      <Spacer height={8} />
       <SidebarLink icon={IconPeople} label="Account" to="/app/settings" variant={variant} />
       <SidebarLink icon={IconGroup3} label="Groups" to="/app/search" variant={variant} />
     </>
