@@ -1,6 +1,6 @@
 import { IconCrossLarge } from "@nattstack/icons-outlined"
 import { Button, Column, Row } from "@nattstack/ui"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { createPortal } from "react-dom"
 import { LogoLink } from "./logo-link"
 import { SidebarContent, useSidebarStore } from "./sidebar-content"
@@ -8,13 +8,17 @@ import { SidebarContent, useSidebarStore } from "./sidebar-content"
 export function SidebarMobile() {
   const { sidebarMobileIsOpen, sidebarMobileSetIsOpen } = useSidebarStore()
 
+  const [isMounted, setIsMounted] = useState(false)
+
   useEffect(function onSidebarMobileEffect() {
+    setIsMounted(true)
+
     return function onSidebarMobileUnmount() {
       sidebarMobileSetIsOpen(false)
     }
   }, [])
 
-  if (typeof document === "undefined") {
+  if (!isMounted) {
     return <></>
   }
 
