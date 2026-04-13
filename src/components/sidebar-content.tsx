@@ -25,7 +25,7 @@ export function SidebarContent(props: SidebarContentProps) {
           <TooltipTrigger
             render={
               <Button
-                className="group mt-8 ml-8"
+                className="group m-8"
                 isIconOnly
                 onClick={() => sidebarDesktopSetIsCollapsed(!sidebarDesktopIsCollapsed)}
                 size={36}
