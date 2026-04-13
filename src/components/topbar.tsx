@@ -21,32 +21,6 @@ export function Topbar() {
         <Row className="items-center">
           {/* Logo */}
           <LogoLink />
-
-          {/* Separator */}
-          <div className="bg-border max-768:hidden mx-4 h-24 w-1" />
-
-          {/* Toggle sidebar desktop */}
-          <Tooltip>
-            <TooltipTrigger
-              render={
-                <Button
-                  className="text-gray-9! max-768:hidden! hover:text-gray-12! -ml-4 transition-[background-color,color,opacity,translate]!"
-                  isIconOnly
-                  onClick={() => sidebarDesktopSetIsCollapsed(!sidebarDesktopIsCollapsed)}
-                  variant="ghost"
-                >
-                  {sidebarDesktopIsCollapsed ? (
-                    <IconSidebarHiddenRightWide />
-                  ) : (
-                    <IconSidebarHiddenLeftWide />
-                  )}
-                </Button>
-              }
-            />
-            <TooltipContent className="max-768:hidden!" side="bottom">
-              {sidebarDesktopIsCollapsed ? "Expand" : "Collapse"} sidebar
-            </TooltipContent>
-          </Tooltip>
         </Row>
 
         {/* Right */}
