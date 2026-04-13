@@ -17,7 +17,7 @@ import { useMatchRoute } from "@tanstack/react-router"
 import { SidebarLink, type SidebarLinkProps } from "./sidebar-link"
 
 interface SidebarLinksProps {
-  variant?: SidebarLinkProps["variant"]
+  variant: SidebarLinkProps["variant"]
 }
 
 export function SidebarLinks(props: SidebarLinksProps) {
