@@ -1,4 +1,4 @@
-import { Spacer } from "@nattstack/ui"
+import { Column, Spacer } from "@nattstack/ui"
 import { create } from "zustand"
 import { SidebarButtonToggle } from "./sidebar-button-toggle"
 import { type SidebarLinkProps } from "./sidebar-link"

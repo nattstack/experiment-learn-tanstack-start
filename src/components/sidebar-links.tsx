@@ -26,22 +26,26 @@ export function SidebarLinks(props: SidebarLinksProps) {
   const matchRoute = useMatchRoute()
   const isRouteSettings = Boolean(matchRoute({ fuzzy: true, to: "/app/settings" }))
 
-  if (isRouteSettings) {
-    return <SidebarLinksSettings variant={variant} />
+  function renderLinks() {
+    if (isRouteSettings) {
+      return <SidebarLinksSettings variant={variant} />
+    }
+
+    return <SidebarLinksDashboard variant={variant} />
   }
 
-  return <SidebarLinksDashboard variant={variant} />
+  return <Column className="gap-y-2 overflow-y-auto px-8">{renderLinks()}</Column>
 }
 
 function SidebarLinksSettings(props: SidebarLinksProps) {
   const { variant } = props
 
   return (
-    <Column className="gap-y-2 overflow-y-auto px-8 py-8">
+    <>
       <SidebarLink icon={IconArrowLeft} label="Back" to="/app" variant={variant} />
       <SidebarLink icon={IconPeople} label="Account" to="/app/settings" variant={variant} />
       <SidebarLink icon={IconGroup3} label="Groups" to="/app/search" variant={variant} />
-    </Column>
+    </>
   )
 }
 
@@ -49,7 +53,7 @@ function SidebarLinksDashboard(props: SidebarLinksProps) {
   const { variant } = props
 
   return (
-    <Column className="gap-y-2 overflow-y-auto px-8">
+    <>
       <SidebarLink icon={IconEditBig} label="New chat" to="/app" variant={variant} />
       <SidebarLink
         icon={IconMagnifyingGlass}
@@ -64,6 +68,6 @@ function SidebarLinksDashboard(props: SidebarLinksProps) {
       <SidebarLink icon={IconAppleIntelligenceIcon} label="Codex" variant={variant} />
       <SidebarLink icon={Icon3dBoxTop} label="GPTs" variant={variant} />
       <SidebarLink icon={IconSettingsGear2} label="Settings" to="/app/settings" variant={variant} />
-    </Column>
+    </>
   )
 }
