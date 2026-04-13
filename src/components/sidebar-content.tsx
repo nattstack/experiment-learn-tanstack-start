@@ -1,6 +1,6 @@
-import { IconSidebarHiddenLeftWide, IconSidebarHiddenRightWide } from "@nattstack/icons-outlined"
-import { Button, Spacer, Tooltip, TooltipContent, TooltipTrigger } from "@nattstack/ui"
+import { Spacer } from "@nattstack/ui"
 import { create } from "zustand"
+import { SidebarButtonToggle } from "./sidebar-button-toggle"
 import { type SidebarLinkProps } from "./sidebar-link"
 import { SidebarLinks } from "./sidebar-links"
 
@@ -11,8 +11,6 @@ interface SidebarContentProps {
 export function SidebarContent(props: SidebarContentProps) {
   const { variant } = props
 
-  const { sidebarDesktopIsCollapsed, sidebarDesktopSetIsCollapsed } = useSidebarStore()
-
   return (
     <>
       {/* Links */}
@@ -20,30 +18,7 @@ export function SidebarContent(props: SidebarContentProps) {
       <Spacer className="grow" />
 
       {/* Expand/Collapse toggle */}
-      {variant === "desktop" && (
-        <Tooltip>
-          <TooltipTrigger
-            render={
-              <Button
-                className="group m-8"
-                isIconOnly
-                onClick={() => sidebarDesktopSetIsCollapsed(!sidebarDesktopIsCollapsed)}
-                size={36}
-                variant="ghost"
-              >
-                {sidebarDesktopIsCollapsed ? (
-                  <IconSidebarHiddenRightWide className="text-gray-11 group-hover:text-gray-12 transition-colors" />
-                ) : (
-                  <IconSidebarHiddenLeftWide className="text-gray-11 group-hover:text-gray-12 transition-colors" />
-                )}
-              </Button>
-            }
-          />
-          <TooltipContent side="right">
-            {sidebarDesktopIsCollapsed ? "Expand" : "Collapse"} sidebar
-          </TooltipContent>
-        </Tooltip>
-      )}
+      {variant === "desktop" && <SidebarButtonToggle />}
     </>
   )
 }
