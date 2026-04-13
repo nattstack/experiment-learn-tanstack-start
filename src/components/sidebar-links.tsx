@@ -26,15 +26,15 @@ export function SidebarLinks(props: SidebarLinksProps) {
   const matchRoute = useMatchRoute()
   const isRouteSettings = Boolean(matchRoute({ fuzzy: true, to: "/app/settings" }))
 
-  function renderLinks() {
-    if (isRouteSettings) {
-      return <SidebarLinksSettings variant={variant} />
-    }
-
-    return <SidebarLinksDashboard variant={variant} />
-  }
-
-  return <Column className="gap-y-2 overflow-y-auto px-8">{renderLinks()}</Column>
+  return (
+    <Column className="gap-y-2 overflow-y-auto px-8">
+      {isRouteSettings ? (
+        <SidebarLinksSettings variant={variant} />
+      ) : (
+        <SidebarLinksDashboard variant={variant} />
+      )}
+    </Column>
+  )
 }
 
 function SidebarLinksSettings(props: SidebarLinksProps) {
