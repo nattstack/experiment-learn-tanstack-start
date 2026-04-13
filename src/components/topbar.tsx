@@ -1,4 +1,8 @@
-import { IconBarsThree, IconLayoutAlignLeft } from "@nattstack/icons-outlined"
+import {
+  IconBarsThree,
+  IconSidebarHiddenLeftWide,
+  IconSidebarHiddenRightWide,
+} from "@nattstack/icons-outlined"
 import { Button, Row, Spacer, Tooltip, TooltipContent, TooltipTrigger } from "@nattstack/ui"
 import { LogoLink } from "./logo-link"
 import { useSidebarStore } from "./sidebar-content"
@@ -31,7 +35,11 @@ export function Topbar() {
                   onClick={() => sidebarDesktopSetIsCollapsed(!sidebarDesktopIsCollapsed)}
                   variant="ghost"
                 >
-                  <IconLayoutAlignLeft />
+                  {sidebarDesktopIsCollapsed ? (
+                    <IconSidebarHiddenRightWide />
+                  ) : (
+                    <IconSidebarHiddenLeftWide />
+                  )}
                 </Button>
               }
             />
