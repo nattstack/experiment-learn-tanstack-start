@@ -1,15 +1,10 @@
-import {
-  IconBarsThree,
-  IconSidebarHiddenLeftWide,
-  IconSidebarHiddenRightWide,
-} from "@nattstack/icons-outlined"
-import { Button, Row, Spacer, Tooltip, TooltipContent, TooltipTrigger } from "@nattstack/ui"
+import { IconBarsThree } from "@nattstack/icons-outlined"
+import { Button, Row, Spacer } from "@nattstack/ui"
 import { LogoLink } from "./logo-link"
 import { useSidebarStore } from "./sidebar-content"
 
 export function Topbar() {
-  const { sidebarDesktopIsCollapsed, sidebarDesktopSetIsCollapsed, sidebarMobileSetIsOpen } =
-    useSidebarStore()
+  const { sidebarMobileSetIsOpen } = useSidebarStore()
 
   return (
     <>
