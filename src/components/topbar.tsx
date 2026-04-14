@@ -1,4 +1,4 @@
-import { IconBarsThree } from "@nattstack/icons-outlined"
+import { IconArrowBoxLeft, IconBarsThree } from "@nattstack/icons-outlined"
 import { Button, Row, Spacer } from "@nattstack/ui"
 import { LogoLink } from "./logo-link"
 import { useSidebarStore } from "./sidebar-content"
@@ -19,7 +19,12 @@ export function Topbar() {
         </Row>
 
         {/* Right */}
-        <Row className="items-center">
+        <Row className="items-center gap-x-2">
+          {/* Sign out */}
+          <Button iconStart={<IconArrowBoxLeft />} variant="ghost">
+            Sign out
+          </Button>
+
           {/* Toggle sidebar mobile */}
           <Button
             className="max-768:flex! hidden!"
