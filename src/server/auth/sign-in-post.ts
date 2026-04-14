@@ -1,6 +1,7 @@
+import { redirect } from "@tanstack/react-router"
 import { createServerFn } from "@tanstack/react-start"
 import { z } from "zod"
-import { upsertSession } from "../../utils/upsert-session"
+import { createSession } from "../../utils/session"
 
 const SignInPostInputSchema = z.object({
   email: z.email(),
@@ -26,10 +27,10 @@ export const signInPost = createServerFn({ method: "POST" })
     console.log("email:", email)
     console.log("password:", password)
 
-    const session = await upsertSession()
-    await session.update({ id: 1 })
+    // const session = await upsertSession()
+    // await session.update({ id: 1 })
 
-    console.log("session:", session.data)
+    createSession("1")
 
-    return { success: true }
+    throw redirect({ to: "/app" })
   })
