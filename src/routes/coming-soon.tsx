@@ -11,18 +11,17 @@ export const Route = createFileRoute("/coming-soon")({
 
 function RouteComponent() {
   const [error, setError] = useState("")
+  const [password, setPassword] = useState("")
 
   const gate = useServerFn(gatePost)
 
   async function onSubmit(event: SubmitEvent<HTMLFormElement>) {
     event.preventDefault()
 
-    const formData = new FormData(event.currentTarget)
-    const password = formData.get("password") as string
-
     const result = await gate({ data: { password } })
 
     if (result?.error) {
+      setPassword("")
       setError(result.error)
     }
   }
@@ -56,8 +55,10 @@ function RouteComponent() {
                 className="pl-48!"
                 id="password"
                 name="password"
+                onChange={(event) => setPassword(event.target.value)}
                 placeholder="Password"
                 type="password"
+                value={password}
               />
             </Row>
             <Spacer height={24} />
