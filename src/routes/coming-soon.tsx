@@ -1,15 +1,30 @@
 import { IconLock } from "@nattstack/icons-outlined"
 import { Button, Column, Input, Label, Row, Spacer } from "@nattstack/ui"
 import { createFileRoute } from "@tanstack/react-router"
-import type { SubmitEvent } from "react"
+import { useServerFn } from "@tanstack/react-start"
+import { useState, type SubmitEvent } from "react"
+import { gatePost } from "../server/gate"
 
 export const Route = createFileRoute("/coming-soon")({
   component: RouteComponent,
 })
 
 function RouteComponent() {
+  const [error, setError] = useState("")
+
+  const gate = useServerFn(gatePost)
+
   async function onSubmit(event: SubmitEvent<HTMLFormElement>) {
     event.preventDefault()
+
+    const formData = new FormData(event.currentTarget)
+    const password = formData.get("password") as string
+
+    const result = await gate({ data: { password } })
+
+    if (result?.error) {
+      setError(result.error)
+    }
   }
 
   return (
@@ -17,6 +32,12 @@ function RouteComponent() {
       <Column className="w-full max-w-[380px]">
         {/* Header */}
         <h1 className="text-24">Under construction</h1>
+        {error && (
+          <>
+            <Spacer height={8} />
+            <p className="text-red-9 text-14">{error}</p>
+          </>
+        )}
         <Spacer height={24} />
 
         {/* Form */}
