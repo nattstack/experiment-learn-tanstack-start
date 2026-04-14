@@ -1,10 +1,18 @@
 import { IconArrowBoxLeft, IconBarsThree } from "@nattstack/icons-outlined"
 import { Button, Row, Spacer } from "@nattstack/ui"
+import { useServerFn } from "@tanstack/react-start"
+import { signOutPost } from "../server/auth/sign-out-post"
 import { LogoLink } from "./logo-link"
 import { useSidebarStore } from "./sidebar-content"
 
 export function Topbar() {
   const { sidebarMobileSetIsOpen } = useSidebarStore()
+
+  const signOut = useServerFn(signOutPost)
+
+  async function onSignOut() {
+    await signOut()
+  }
 
   return (
     <>
@@ -21,7 +29,7 @@ export function Topbar() {
         {/* Right */}
         <Row className="items-center gap-x-2">
           {/* Sign out */}
-          <Button iconStart={<IconArrowBoxLeft />} variant="ghost">
+          <Button iconStart={<IconArrowBoxLeft />} variant="ghost" onClick={onSignOut}>
             Sign out
           </Button>
 

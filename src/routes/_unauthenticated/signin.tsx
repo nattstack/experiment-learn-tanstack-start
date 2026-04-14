@@ -13,9 +13,9 @@ export const Route = createFileRoute("/_unauthenticated/signin")({
     async function onSubmit(event: SubmitEvent<HTMLFormElement>) {
       event.preventDefault()
 
-      const formData = new FormData(event.currentTarget)
-      const email = formData.get("email") as string
-      const password = formData.get("password") as string
+      // const formData = new FormData(event.currentTarget)
+      const email = "test@example.com"
+      const password = "123123"
 
       console.log("email:", email)
       console.log("password:", password)
