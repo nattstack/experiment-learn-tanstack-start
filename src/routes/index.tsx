@@ -73,9 +73,7 @@ export const Route = createFileRoute("/")({
                 </Column>
 
                 <Row className="flex-wrap gap-8">
-                  <Button size={40} variant="accent">
-                    Share preview
-                  </Button>
+                  <Button size={40}>Share preview</Button>
                   <Button size={40} variant="ghost">
                     Remind team
                   </Button>
@@ -153,9 +151,7 @@ export const Route = createFileRoute("/")({
               </Column>
 
               <Row className="flex-wrap gap-12">
-                <Button size={44} variant="accent">
-                  Save settings
-                </Button>
+                <Button size={44}>Save settings</Button>
                 <Button size={44} variant="secondary">
                   Duplicate template
                 </Button>
@@ -203,9 +199,7 @@ export const Route = createFileRoute("/")({
                 </Column>
 
                 <Row className="flex-wrap gap-8">
-                  <Button size={44} variant="accent">
-                    Approve selected
-                  </Button>
+                  <Button size={44}>Approve selected</Button>
                   <Button size={44} variant="secondary">
                     Request changes
                   </Button>
@@ -215,9 +209,7 @@ export const Route = createFileRoute("/")({
                 </Row>
 
                 <Row className="flex-wrap gap-8">
-                  <Button size={36} variant="primary">
-                    Small primary
-                  </Button>
+                  <Button size={36}>Small primary</Button>
                   <Button size={40} variant="secondary">
                     Medium secondary
                   </Button>
