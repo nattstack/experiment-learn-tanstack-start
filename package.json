@@ -5,6 +5,7 @@
     "check:format": "oxfmt --check",
     "check:type": "tsc",
     "dev": "vite dev",
+    "preview": "vite preview",
     "update": "bun update --interactive --recursive"
   },
   "dependencies": {
