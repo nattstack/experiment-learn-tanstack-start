@@ -8,7 +8,10 @@ export default defineConfig({
   plugins: [
     // Order matters
     tanstackStart(),
-    nitro(),
+    nitro({
+      // Pin to vercel preset so turbo.json "outputs": [".vercel/output/**"] stays in sync
+      preset: "vercel",
+    }),
     react(),
     tailwindcss(),
   ],
@@ -17,8 +20,5 @@ export default defineConfig({
   },
   server: {
     port: 3000,
-  },
-  ssr: {
-    noExternal: ["@nattstack/ui"],
   },
 })
