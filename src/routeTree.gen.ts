@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ComingSoonRouteImport } from './routes/coming-soon'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as UnauthenticatedSignupRouteImport } from './routes/_unauthenticated/signup'
@@ -17,6 +18,11 @@ import { Route as AuthenticatedAppIndexRouteImport } from './routes/_authenticat
 import { Route as AuthenticatedAppSettingsRouteImport } from './routes/_authenticated/app/settings'
 import { Route as AuthenticatedAppSearchRouteImport } from './routes/_authenticated/app/search'
 
+const ComingSoonRoute = ComingSoonRouteImport.update({
+  id: '/coming-soon',
+  path: '/coming-soon',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
   id: '/_authenticated',
   getParentRoute: () => rootRouteImport,
@@ -55,6 +61,7 @@ const AuthenticatedAppSearchRoute = AuthenticatedAppSearchRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/coming-soon': typeof ComingSoonRoute
   '/signin': typeof UnauthenticatedSigninRoute
   '/signup': typeof UnauthenticatedSignupRoute
   '/app/search': typeof AuthenticatedAppSearchRoute
@@ -63,6 +70,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/coming-soon': typeof ComingSoonRoute
   '/signin': typeof UnauthenticatedSigninRoute
   '/signup': typeof UnauthenticatedSignupRoute
   '/app/search': typeof AuthenticatedAppSearchRoute
@@ -73,6 +81,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
+  '/coming-soon': typeof ComingSoonRoute
   '/_unauthenticated/signin': typeof UnauthenticatedSigninRoute
   '/_unauthenticated/signup': typeof UnauthenticatedSignupRoute
   '/_authenticated/app/search': typeof AuthenticatedAppSearchRoute
@@ -83,17 +92,26 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/coming-soon'
     | '/signin'
     | '/signup'
     | '/app/search'
     | '/app/settings'
     | '/app/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/signin' | '/signup' | '/app/search' | '/app/settings' | '/app'
+  to:
+    | '/'
+    | '/coming-soon'
+    | '/signin'
+    | '/signup'
+    | '/app/search'
+    | '/app/settings'
+    | '/app'
   id:
     | '__root__'
     | '/'
     | '/_authenticated'
+    | '/coming-soon'
     | '/_unauthenticated/signin'
     | '/_unauthenticated/signup'
     | '/_authenticated/app/search'
@@ -104,12 +122,20 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
+  ComingSoonRoute: typeof ComingSoonRoute
   UnauthenticatedSigninRoute: typeof UnauthenticatedSigninRoute
   UnauthenticatedSignupRoute: typeof UnauthenticatedSignupRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/coming-soon': {
+      id: '/coming-soon'
+      path: '/coming-soon'
+      fullPath: '/coming-soon'
+      preLoaderRoute: typeof ComingSoonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/_authenticated': {
       id: '/_authenticated'
       path: ''
@@ -180,6 +206,7 @@ const AuthenticatedRouteRouteWithChildren =
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
+  ComingSoonRoute: ComingSoonRoute,
   UnauthenticatedSigninRoute: UnauthenticatedSigninRoute,
   UnauthenticatedSignupRoute: UnauthenticatedSignupRoute,
 }
