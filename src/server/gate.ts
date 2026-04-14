@@ -27,5 +27,5 @@ export const gatePost = createServerFn({ method: "POST" })
       secure: process.env.NODE_ENV === "production",
     })
 
-    throw redirect({ to: "/" })
+    throw redirect({ to: "/app" })
   })
